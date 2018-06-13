@@ -12,7 +12,7 @@ LDFLAGS := -nostartfiles -nostdlib -lc -lgcc -march=rv32$(ARCH) -mabi=$(ABI)
 VPATH += $(src_dir) $(inc_dir)
 incs += -I$(src_dir) -I$(inc_dir)
 
-ifdef TCM
+ifeq ($(TCM),TRUE)
 ld_script := $(inc_dir)/link_tcm.ld
 asm_src := crt_tcm.S
 else
@@ -20,12 +20,20 @@ ld_script := $(inc_dir)/link.ld
 asm_src := crt.S
 endif
 
+#ifdef TCM
+ifeq ($(TCM),TRUE)
+baseaddr :=480000
+else
+baseaddr :=0
+endif
+
+
 c_src := sc_print.c dhry_1.c dhry_2.c
 
 c_objs := $(addprefix $(bld_dir)/,$(patsubst %.c, %.o, $(c_src)))
 asm_objs := $(addprefix $(bld_dir)/,$(patsubst %.S, %.o, $(asm_src)))
 
-default: $(bld_dir)/dhrystone21.elf $(bld_dir)/dhrystone21.hex $(bld_dir)/dhrystone21.dump
+default: $(bld_dir)/dhrystone21.elf $(bld_dir)/dhrystone21.hex $(bld_dir)/dhrystone21.dump $(bld_dir)/dhrystone21.tcm
 
 $(bld_dir)/%.o: %.S
 	$(RISCV_GCC) $(CFLAGS) -D__ASSEMBLY__=1 -c $(incs) $< -o $@
@@ -41,6 +49,12 @@ $(bld_dir)/dhrystone21.hex: $(bld_dir)/dhrystone21.elf
 
 $(bld_dir)/dhrystone21.dump: $(bld_dir)/dhrystone21.elf
 	$(RISCV_OBJDUMP) $^ > $@
+
+$(bld_dir)/%.tcm: $(bld_dir)/%.hex
+	perl ../../../th.pl -f  $^  -o $@ -b $(baseaddr)
+
+
+
 
 clean:
 	$(RM) $(c_objs) $(asm_objs) $(bld_dir)/dhrystone21.elf $(bld_dir)/dhrystone21.hex $(bld_dir)/dhrystone21.dump

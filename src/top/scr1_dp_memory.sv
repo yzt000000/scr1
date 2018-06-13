@@ -88,7 +88,7 @@ end
 //-------------------------------------------------------------------------------
 // Port B memory behavioral description
 //-------------------------------------------------------------------------------
-always_ff @(posedge clk) begin
+always @(posedge clk) begin
     if (wenb) begin
         for (int i=0; i<SCR1_NBYTES; i++) begin
             if (webb[i]) begin

@@ -29,7 +29,9 @@ top/scr1_imem_router.sv
 top/scr1_dmem_ahb.sv
 top/scr1_imem_ahb.sv
 top/scr1_tcm.sv
+top/scr1_itcm.sv
 top/scr1_dp_memory.sv
+top/scr1_sp_memory.sv
 top/scr1_dmem_router.sv
 top/scr1_timer.sv
 core/scr1_core_top.sv

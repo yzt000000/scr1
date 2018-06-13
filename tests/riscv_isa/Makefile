@@ -9,16 +9,47 @@ objs      := $(addprefix $(obj_dir)/,$(test_list:%=%.o))
 test_elf  := $(addprefix $(bld_dir)/,$(test_list:%=%.elf))
 test_hex  := $(addprefix $(bld_dir)/,$(test_list:%=%.hex))
 test_dump := $(addprefix $(bld_dir)/,$(test_list:%=%.dump))
+test_tcm  := $(addprefix $(bld_dir)/,$(test_list:%=%.tcm))
 
-CFLAGS := -I$(inc_dir) -I$(src_dir) -DASM -Wa,-march=rv32$(ARCH) -march=rv32$(ARCH) -mabi=ilp32f -D__riscv_xlen=32 
-LDFLAGS := -static -fvisibility=hidden -nostdlib -nostartfiles -T$(inc_dir)/link.ld -march=rv32$(ARCH) -mabi=ilp32f
+#ifdef TCM 
+ifeq ($(TCM),TRUE)
+ld_script := $(inc_dir)/link_tcm.ld
+asm_src := crt_tcm.S
+else
+ld_script := $(inc_dir)/link.ld
+asm_src := crt.S
+endif
+
+#ifdef TCM
+ifeq ($(TCM),TRUE)
+baseaddr :=480000
+else
+baseaddr :=0
+endif
+
+
+src_dir := $(dir $(lastword $(MAKEFILE_LIST)))
+
+FLAGS = -O3 -funroll-loops -fpeel-loops -fgcse-sm -fgcse-las -flto
+FLAGS_STR = "$(FLAGS)"
+
+CFLAGS := $(FLAGS) $(EXT_CFLAGS) \
+-I$(inc_dir) -I$(src_dir) -DASM \
+-static -std=gnu99 -fno-common -fno-builtin-printf \
+-Wa,-march=rv32$(ARCH) -march=rv32$(ARCH) -mabi=$(ABI) \
+-DFLAGS_STR=\"$(FLAGS_STR)\" \
+-DSELF_TIMED=1 -DTIME=1
+
+
+#LDFLAGS := -static -fvisibility=hidden -nostdlib -nostartfiles -T$(ld_script) -march=rv32$(ARCH) -mabi=ilp32f
+LDFLAGS := -nostartfiles -nostdlib -lc -lgcc -march=rv32$(ARCH) -mabi=ilp32f
 
 VPATH += $(src_dir) $(bld_dir) $(obj_dir) $(RISCV_TESTS)
 
-default: check_riscv_tests $(test_elf) $(test_hex) $(test_dump)
+default: check_riscv_tests $(test_tcm) $(test_elf) $(test_hex) $(test_dump) 
 
 define compile_template
-$(obj_dir)/$$(basename $(notdir $(SRC))).o: $$(SRC) | $(obj_dir)
+$(obj_dir)/$$(basename $(notdir $(SRC))).o: $$(SRC) | $(obj_dir) $(asm_objs) $(ld_script)
 	$(RISCV_GCC) -c $$< $(CFLAGS) -o $$@
  endef
 
@@ -27,7 +58,7 @@ $(foreach SRC,$(rv32_isa_tests), $(eval $(compile_template)))
 $(obj_dir) :
 	mkdir -p $(obj_dir)
 
-$(bld_dir)/%.elf: $(obj_dir)/%.o | $(obj_dir)
+$(bld_dir)/%.elf: $(obj_dir)/%.o | $(obj_dir) $(ld_script)
 	$(RISCV_GCC) $^ $(LDFLAGS) -o $@
 
 $(bld_dir)/%.hex: $(bld_dir)/%.elf
@@ -36,8 +67,11 @@ $(bld_dir)/%.hex: $(bld_dir)/%.elf
 $(bld_dir)/%.dump: $(bld_dir)/%.elf
 	$(RISCV_OBJDUMP) $^ > $@
 
+$(bld_dir)/%.tcm: $(bld_dir)/%.hex
+	perl ../../th.pl -f  $^  -o $@ -b $(baseaddr)
+
 clean:
-	$(RM) $(test_elf) $(test_hex) $(test_dump) $(objs)
+	$(RM) $(test_elf) $(test_hex) $(test_dump) $(objs) $(test_tcm)
 	$(RM) -R $(obj_dir)
 
 

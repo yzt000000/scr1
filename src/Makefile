@@ -25,10 +25,14 @@ build_vcs: $(rtl_list)
 	-lca \
 	-sverilog \
 	-notice \
+	-debug_region=lib+cell \
+	-debug_pp \
+	-LDFLAGS "-Wl,--rpath,$(NOVAS_HOME)/share/PLI/VCS/LINUX64 " \
 	+lint=all,noVCDE \
 	-timescale=1ns/1ps \
 	+incdir+$(rtl_dir)includes \
 	+define+SCR1_SIM_ENV \
+	$(VCS_OPTS) \
 	-nc \
 	-debug_all \
 	$(sv_list)
@@ -46,3 +50,16 @@ build_ncsim: $(rtl_list)
 	+define+SCR1_SIM_ENV \
 	$(sv_list) \
 	-top $(top_module)
+
+run_verdi: $(rtl_list)
+	cd $(bld_dir); \
+	verdi \
+	-full64 \
+	-lca \
+	-sverilog \
+	-notice \
+	-timescale=1ns/1ps \
+	+incdir+$(rtl_dir)includes \
+	+define+SCR1_SIM_ENV \
+	$(sv_list)
+

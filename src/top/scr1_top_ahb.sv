@@ -193,9 +193,9 @@ scr1_core_top i_core_top (
 //-------------------------------------------------------------------------------
 // TCM instance
 //-------------------------------------------------------------------------------
-scr1_tcm #(
+scr1_itcm #(
     .SCR1_TCM_SIZE  (`SCR1_DMEM_AWIDTH'(~SCR1_TCM_ADDR_MASK + 1'b1))
-) i_tcm (
+) i_itcm (
     .clk            (clk                ),
     .rst_n          (rst_n_out          ),
     // Instruction interface to TCM
