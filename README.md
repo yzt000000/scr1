@@ -1,3 +1,9 @@
+1. modify TCM to be single port memory
+2. default bootup address change to 0x00480000
+3. add fsdb dump script
+
+
+---------------------------------------------------------------------------------------------------------
 SCR1 is an open-source RISC-V compatible MCU core, designed by Syntacore.
 
 ## Key features
