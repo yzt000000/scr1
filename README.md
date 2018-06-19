@@ -1,6 +1,9 @@
 1. modify TCM to be single port memory
 2. default bootup address change to 0x00480000
 3. add fsdb dump script
+4. ITCM base address  : 0x0048000   , 64KB
+5. DTCM base address  : 0x0049000   , 64KB
+6. Timer base address : 0x0050000 
 
 
 ---------------------------------------------------------------------------------------------------------
