@@ -1,2 +1,2 @@
-fsdbDumpvars 0 "scr1_top_tb_ahb" +fsdbfile+../fsdb/itcm_test_fsdb.fsdb 
+fsdbDumpvars 0 "scr1_top_tb_ahb" +fsdbfile+../fsdb/timer_test_tcm.fsdb 
 run

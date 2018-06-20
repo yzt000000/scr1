@@ -70,9 +70,41 @@ parameter int unsigned SCR1_CSR_MTVEC_BASE_RW_BITS = 26;    // number of writabl
 `define SCR1_DMEM_AXI_RESP_BP       // bypass data memory AXI bridge response register
 
 `ifdef SCR1_TCM_EN
+`ifdef SCR1_IDTCM_EN
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_ITCM_ADDR_MASK          = 'hFFFF0000;
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_ITCM_ADDR_PATTERN       = 'h00480000;
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_DTCM_ADDR_MASK          = 'hFFFF0000;
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_DTCM_ADDR_PATTERN       = 'h00490000;
+
+
 parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_TCM_ADDR_MASK          = 'hFFFF0000;
 parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_TCM_ADDR_PATTERN       = 'h00480000;
+
+`else
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_TCM_ADDR_MASK          = 'hFFFF0000;
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_TCM_ADDR_PATTERN       = 'h00480000;
+`endif  // SCR1_IDTCM_EN
+
+`else
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_ITCM_ADDR_MASK          = 'hFFFF0000;
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_ITCM_ADDR_PATTERN       = 'h00480000;
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_DTCM_ADDR_MASK          = 'hFFFF0000;
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_DTCM_ADDR_PATTERN       = 'h00490000;
+
+
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_TCM_ADDR_MASK          = 'hFFFF0000;
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_TCM_ADDR_PATTERN       = 'h00480000;
+
+
 `endif // SCR1_TCM_EN
+
+
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_R_ITCM_ADDR_MASK          = 'hFFFE0000;
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_R_ITCM_ADDR_PATTERN       = 'h00480000;
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_R_DTCM_ADDR_MASK          = 'hFFFE0000;
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_R_DTCM_ADDR_PATTERN       = 'h00480000;
+
+
 
 parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_TIMER_ADDR_MASK        = 'hFFFFFFE0;
 parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_TIMER_ADDR_PATTERN     = 'h00490000;

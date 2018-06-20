@@ -160,6 +160,17 @@ dtcm_test: | $(bld_dir)
 itcm_test: | $(bld_dir)
 	$(MAKE) -C $(root_dir)/tests/itcm_test  EXT_CFLAGS="$(EXT_CFLAGS)"  $(TCM_EN)
 
+idtcm_wr_test: | $(bld_dir)
+	$(MAKE) -C $(root_dir)/tests/idtcm_wr_test  EXT_CFLAGS="$(EXT_CFLAGS)"  $(TCM_EN)
+
+timer_test: | $(bld_dir)
+	$(MAKE) -C $(root_dir)/tests/timer_test  EXT_CFLAGS="$(EXT_CFLAGS)"  $(TCM_EN)
+
+
+qsort: | $(bld_dir)
+	$(MAKE) -C $(root_dir)/tests/qsort  EXT_CFLAGS="$(EXT_CFLAGS)"  $(TCM_EN)
+
+
 demo_iasm: | $(bld_dir)
 	$(MAKE) -C $(root_dir)/tests/demo_iasm  EXT_CFLAGS="$(EXT_CFLAGS)"  $(TCM_EN)
 

@@ -35,7 +35,7 @@ module scr1_dtcm
     output  type_scr1_mem_resp_e            dmem_resp
 );
 
-string stuff_file; 
+string stuff_file;
 //-------------------------------------------------------------------------------
 // Local signal declaration
 //-------------------------------------------------------------------------------
@@ -108,15 +108,15 @@ end
 
 always_comb begin
     tcm_n_state = SCR1_TCM_ST_IDLE;
-    case(tcm_state) 
+    case(tcm_state)
         SCR1_TCM_ST_IDLE  : begin
-                                if (imem_req)       tcm_n_state = SCR1_TCM_ST_IREQ ;
-                                else if (dmem_req)  tcm_n_state = SCR1_TCM_ST_DREQ ; 
+                                if (dmem_req)       tcm_n_state = SCR1_TCM_ST_DREQ ;
+                                else if (imem_req)  tcm_n_state = SCR1_TCM_ST_IREQ ;
                             end
 
         SCR1_TCM_ST_IREQ  : begin
-                                if (imem_req)       tcm_n_state = SCR1_TCM_ST_IREQ ;
-                                else if (dmem_req)  tcm_n_state = SCR1_TCM_ST_DREQ ;
+                                if (dmem_req)       tcm_n_state = SCR1_TCM_ST_DREQ ;
+                                else if (imem_req)  tcm_n_state = SCR1_TCM_ST_IREQ ;
                                 else                tcm_n_state = SCR1_TCM_ST_IDLE ;
                             end
 
@@ -130,30 +130,30 @@ end
 
 
 always_comb begin
-    imem_resp     = SCR1_MEM_RESP_NOTRDY; 
+    imem_resp     = SCR1_MEM_RESP_NOTRDY;
     dmem_resp     = SCR1_MEM_RESP_NOTRDY;
-    imem_req_ack  = 1'b1                ; 
-    dmem_req_ack  = 1'b1                ; 
-    case(tcm_state) 
+    imem_req_ack  = 1'b0                ;
+    dmem_req_ack  = 1'b0                ;
+    case(tcm_state)
         SCR1_TCM_ST_IDLE  : begin
-                                imem_resp     = SCR1_MEM_RESP_NOTRDY ;
-                                dmem_resp     = SCR1_MEM_RESP_NOTRDY ;
-                                imem_req_ack  = 1'b0                 ;
-                                dmem_req_ack  = 1'b0                 ;
+                                //imem_resp     = SCR1_MEM_RESP_NOTRDY ;
+                                //dmem_resp     = SCR1_MEM_RESP_NOTRDY ;
+                                dmem_req_ack  =  dmem_req            ;
+                                imem_req_ack  = ~dmem_req & imem_req ;
                             end
 
         SCR1_TCM_ST_IREQ  : begin
                                 imem_resp     = SCR1_MEM_RESP_RDY_OK ;
-                                dmem_resp     = SCR1_MEM_RESP_NOTRDY ;   
-                                imem_req_ack  = 1'b1                 ;
-                                dmem_req_ack  = 1'b0                 ;
+                                dmem_resp     = SCR1_MEM_RESP_NOTRDY ;
+                                dmem_req_ack  =  dmem_req            ;
+                                imem_req_ack  = ~dmem_req & imem_req ;
                             end
 
         SCR1_TCM_ST_DREQ  : begin
                                 imem_resp     = SCR1_MEM_RESP_NOTRDY ;
                                 dmem_resp     = SCR1_MEM_RESP_RDY_OK ;
-                                imem_req_ack  = 1'b0                 ;
-                                dmem_req_ack  = 1'b1                 ;
+                                dmem_req_ack  =  dmem_req            ;
+                                imem_req_ack  = ~dmem_req & imem_req ;
                             end
     endcase
 end
@@ -170,7 +170,7 @@ end
 //assign dmem_wr  = dmem_req & (dmem_cmd == SCR1_MEM_CMD_WR) ;
 //
 //
-assign dmem_wr = (!imem_req) && (dmem_req & (dmem_cmd == SCR1_MEM_CMD_WR)) ; 
+assign dmem_wr =  dmem_req & (dmem_cmd == SCR1_MEM_CMD_WR);
 assign dmem_rd = ~dmem_wr;
 
 always_comb begin
@@ -192,7 +192,7 @@ end
 
 
 always @(negedge rst_n) begin
-    if (stuff_file.len() > 0) begin                                                                                                        
+    if (stuff_file.len() > 0) begin
         $display(stuff_file);
         $display("#######################################################\n");
         $readmemh(stuff_file,i_sp_memory.ram_block);
@@ -206,7 +206,7 @@ assign mem_wr = dmem_wr;
 assign mem_byteen = dmem_byteen;
 assign mem_writedata = dmem_writedata;
 assign imem_rdata = mem_rdata_local;
-assign mem_addr = imem_req ? imem_addr: dmem_addr;
+assign mem_addr = dmem_req ? dmem_addr: imem_addr;
 assign dmem_rdata_local = mem_rdata_local;
 
 

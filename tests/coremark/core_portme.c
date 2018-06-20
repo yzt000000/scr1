@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "coremark.h"
-#include "platform.h"
-#include "encoding.h"
+//#include "platform.h"
+//#include "encoding.h"
 
 #if VALIDATION_RUN
 	volatile ee_s32 seed1_volatile=0x3415;
@@ -29,12 +29,12 @@ static CORE_TICKS t0, t1;
 
 void start_time(void)
 {
-  t0 = get_cycle_value();
+  t0 = get_timer_value();
 }
 
 void stop_time(void)
 {
-  t1 = get_cycle_value();
+  t1 = get_timer_value();
 }
 
 CORE_TICKS get_time(void)

@@ -1,0 +1,49 @@
+*design* DebussyLib (btIdent Verdi3_L-2016.06-SP2)
+Command arguments:
+    +define+verilog
+    -sverilog
+    -timescale=1ns/1ps
+    +incdir+/home/wjfan/syntacore/scr1_idtcm_2s/src/includes
+    +define+SCR1_SIM_ENV
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/tb/scr1_memory_tb_ahb.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/tb/scr1_top_tb_ahb_tcm.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_top.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_csr.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_brkm_matcher.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_ifu.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_lsu.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_ipic.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_ialu.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_tracelog.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_idu.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_brkm.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_exu.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_dbga.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_mprf.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_top_ahb.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_imem_router.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_dmem_ahb.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_imem_ahb.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_tcm.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_itcm.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_dtcm.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_dp_memory.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_sp_memory.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_dmem_router.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_timer.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_core_top.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_clk_ctrl.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/core/primitives/scr1_cg.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_dbgc.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc_data_reg.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_sync_rstn.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc_synchronizer.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc.sv
+    /home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc_shift_reg.sv
+
+Highest level modules:
+scr1_top_tb_ahb
+scr1_itcm
+scr1_dp_memory
+
+Total	0 error(s),   0 warning(s)

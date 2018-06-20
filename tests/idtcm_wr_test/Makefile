@@ -29,12 +29,12 @@ else
 baseaddr :=0
 endif
 
-c_src := core_list_join.c core_main.c core_matrix.c core_state.c core_util.c  core_portme.c
+c_src := sc_print.c  idtcm_wr_test.c
 
 c_objs := $(addprefix $(bld_dir)/,$(patsubst %.c, %.o, $(c_src)))
 asm_objs := $(addprefix $(bld_dir)/,$(patsubst %.S, %.o, $(asm_src)))
 
-default: $(bld_dir)/coremark.elf $(bld_dir)/coremark.hex $(bld_dir)/coremark.dump $(bld_dir)/coremark.tcm
+default: $(bld_dir)/idtcm_wr_test.elf $(bld_dir)/idtcm_wr_test.hex $(bld_dir)/idtcm_wr_test.dump $(bld_dir)/idtcm_wr_test.tcm
 
 $(bld_dir)/%.o: %.S
 	$(RISCV_GCC) $(CFLAGS) -D__ASSEMBLY__=1 -c $(incs) $< -o $@
@@ -42,13 +42,13 @@ $(bld_dir)/%.o: %.S
 $(bld_dir)/%.o: %.c
 	$(RISCV_GCC) $(CFLAGS) -c $(incs) $< -o $@
 
-$(bld_dir)/coremark.elf: $(ld_script) $(c_objs) $(asm_objs)
+$(bld_dir)/idtcm_wr_test.elf: $(ld_script) $(c_objs) $(asm_objs)
 	$(RISCV_GCC) -o $@ -T $^ $(LDFLAGS)
 
-$(bld_dir)/coremark.hex: $(bld_dir)/coremark.elf
+$(bld_dir)/idtcm_wr_test.hex: $(bld_dir)/idtcm_wr_test.elf
 	$(RISCV_OBJCOPY) $^ $@
 
-$(bld_dir)/coremark.dump: $(bld_dir)/coremark.elf
+$(bld_dir)/idtcm_wr_test.dump: $(bld_dir)/idtcm_wr_test.elf
 	$(RISCV_OBJDUMP) $^ > $@
 
 
@@ -58,4 +58,4 @@ $(bld_dir)/%.tcm: $(bld_dir)/%.hex
 
 
 clean:
-	$(RM) $(c_objs) $(asm_objs) $(bld_dir)/coremark.elf $(bld_dir)/coremark.hex $(bld_dir)/coremark.dump $(bld_dir)/coremark.tcm
+	$(RM) $(c_objs) $(asm_objs) $(bld_dir)/idtcm_wr_test.elf $(bld_dir)/idtcm_wr_test.hex $(bld_dir)/idtcm_wr_test.dump $(bld_dir)/idtcm_wr_test.tcm

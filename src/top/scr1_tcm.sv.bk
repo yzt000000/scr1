@@ -69,58 +69,44 @@ logic [`SCR1_DMEM_DWIDTH-1:0]   d_dmem_wdata           ;
 logic [`SCR1_DMEM_DWIDTH-1:0]   d_dmem_rdata           ;
 type_scr1_mem_resp_e            d_dmem_resp            ;
 
-logic                           imem2dtcm;
-logic                           imem2dtcm_r;
-logic                           dmem2dtcm;
-logic                           dmem2dtcm_r;
+logic  itcm_addr_match ;
 
-assign imem2dtcm = (imem_addr[31:16] == 16'h0049);
-assign dmem2dtcm = (dmem_addr[31:16] == 16'h0049);
+assign itcm_addr_match = imem_addr[31:16] == 16'h0048 ; 
+assign dtcm_addr_match = dmem_addr[31:16] == 16'h0048 ;
 
-// I-TCM
-assign i_imem_req    = imem_req & ~imem2dtcm;
-assign i_imem_cmd    = imem_cmd;
-assign i_imem_addr   = imem_addr;
+assign i_imem_req    = imem_req   && itcm_addr_match  ;
+assign i_imem_cmd    = imem_cmd    ;
+assign i_imem_addr   = imem_addr   ;
 
-assign i_dmem_req    = dmem_req & ~dmem2dtcm;
-assign i_dmem_cmd    = dmem_cmd;
-assign i_dmem_width  = dmem_width;
-assign i_dmem_addr   = dmem_addr;
-assign i_dmem_wdata  = dmem_wdata;
+assign i_dmem_req    = dmem_req   && dtcm_addr_match  ;
+assign i_dmem_cmd    = dmem_cmd    ;
+assign i_dmem_width  = dmem_width  ;
+assign i_dmem_addr   = dmem_addr   ;
+assign i_dmem_wdata  = dmem_wdata  ;
 
-// D-TCM
-assign d_imem_req    = imem_req & imem2dtcm;
-assign d_imem_cmd    = imem_cmd;
-assign d_imem_addr   = imem_addr;
+assign d_imem_req    = imem_req   && ~itcm_addr_match ;
+assign d_imem_cmd    = imem_cmd    ;
+assign d_imem_addr   = imem_addr   ;
 
-assign d_dmem_req    = dmem_req & dmem2dtcm;
-assign d_dmem_cmd    = dmem_cmd;
-assign d_dmem_width  = dmem_width;
-assign d_dmem_addr   = dmem_addr;
-assign d_dmem_wdata  = dmem_wdata;
+assign d_dmem_req    = dmem_req   && ~dtcm_addr_match ;
+assign d_dmem_cmd    = dmem_cmd    ;
+assign d_dmem_width  = dmem_width  ;
+assign d_dmem_addr   = dmem_addr   ;
+assign d_dmem_wdata  = dmem_wdata  ;
 
-// ---
-always_ff @(posedge clk, negedge rst_n) begin
-    if (~rst_n) begin
-        imem2dtcm_r <= 1'b0;
-        dmem2dtcm_r <= 1'b0;
-    end else begin
-        if (imem_req & imem_req_ack) imem2dtcm_r <= imem2dtcm;
-        if (dmem_req & dmem_req_ack) dmem2dtcm_r <= dmem2dtcm;
-    end
-end
+//assign imem_req_ack  = i_imem_req_ack | d_imem_req_ack                      ;
+assign imem_req_ack  = 1'b1;
+assign imem_rdata    = i_imem_req_ack ? i_imem_rdata   : d_imem_rdata       ;
+assign imem_resp     = i_imem_req_ack ? i_imem_resp    : d_imem_resp;
 
-assign imem_req_ack  = imem2dtcm   ? d_imem_req_ack   : i_imem_req_ack;
-assign imem_rdata    = imem2dtcm_r ? d_imem_rdata     : i_imem_rdata;
-assign imem_resp     = imem2dtcm_r ? d_imem_resp      : i_imem_resp;
-
-assign dmem_req_ack  = dmem2dtcm   ? d_dmem_req_ack   : i_dmem_req_ack;
-assign dmem_rdata    = dmem2dtcm_r ? d_dmem_rdata     : i_dmem_rdata;
-assign dmem_resp     = dmem2dtcm_r ? d_dmem_resp      : i_dmem_resp;
+//assign dmem_req_ack  = i_dmem_req_ack | d_dmem_req_ack ;
+assign dmem_req_ack  = 1'b1; 
+assign dmem_rdata    = i_dmem_req_ack ? i_dmem_rdata   : d_dmem_rdata       ;
+assign dmem_resp     = i_dmem_req_ack ? i_dmem_resp    : d_dmem_resp        ;
 
 
 
-scr1_dtcm #(
+scr1_itcm #(
         .SCR1_TCM_SIZE  (SCR1_TCM_SIZE)
 )
 scr1_itcm (/*autoinst*/

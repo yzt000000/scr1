@@ -1,0 +1,330 @@
+debImport "-sverilog" "-timescale=1ns/1ps" \
+          "+incdir+/home/wjfan/syntacore/scr1_idtcm_2s/src/includes" \
+          "+define+SCR1_SIM_ENV" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/tb/scr1_memory_tb_ahb.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/tb/scr1_top_tb_ahb_tcm.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_top.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_csr.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_brkm_matcher.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_ifu.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_lsu.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_ipic.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_ialu.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_tracelog.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_idu.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_brkm.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_exu.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_dbga.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/pipeline/scr1_pipe_mprf.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_top_ahb.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_imem_router.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_dmem_ahb.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_imem_ahb.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_tcm.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_itcm.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_dtcm.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_dp_memory.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_sp_memory.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_dmem_router.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_timer.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_core_top.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_clk_ctrl.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/core/primitives/scr1_cg.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_dbgc.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc_data_reg.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_sync_rstn.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc_synchronizer.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc.sv" \
+          "/home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc_shift_reg.sv"
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/timer_test_sram.fsdb}
+srcHBSelect "scr1_top_tb_ahb.i_top" -win $_nTrace1
+srcSetScope -win $_nTrace1 "scr1_top_tb_ahb.i_top" -delim "."
+srcHBSelect "scr1_top_tb_ahb.i_top.i_core_top" -win $_nTrace1
+srcSetScope -win $_nTrace1 "scr1_top_tb_ahb.i_top.i_core_top" -delim "."
+srcHBSelect "scr1_top_tb_ahb.i_top.i_timer" -win $_nTrace1
+srcSetScope -win $_nTrace1 "scr1_top_tb_ahb.i_top.i_timer" -delim "."
+srcSelect -signal "rtc_clk" -win $_nTrace1
+srcSelect -signal "clk" -win $_nTrace1
+srcSelect -signal "rst_n" -win $_nTrace1
+srcSelect -signal "dmem_req" -win $_nTrace1
+srcSelect -signal "dmem_cmd" -win $_nTrace1
+srcSelect -signal "dmem_width" -win $_nTrace1
+srcSelect -signal "dmem_addr" -win $_nTrace1
+srcSelect -signal "dmem_wdata" -win $_nTrace1
+srcSelect -signal "dmem_req_ack" -win $_nTrace1
+srcSelect -signal "dmem_rdata" -win $_nTrace1
+srcSelect -signal "dmem_resp" -win $_nTrace1
+srcSelect -signal "timer_val" -win $_nTrace1
+srcSelect -signal "timer_irq" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 "/scr1_top_tb_ahb/i_top/i_timer/rtc_clk" \
+           "/scr1_top_tb_ahb/i_top/i_timer/clk" \
+           "/scr1_top_tb_ahb/i_top/i_timer/rst_n" \
+           "/scr1_top_tb_ahb/i_top/i_timer/dmem_req" \
+           "/scr1_top_tb_ahb/i_top/i_timer/dmem_cmd" \
+           "/scr1_top_tb_ahb/i_top/i_timer/dmem_width\[1:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_timer/dmem_addr\[31:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_timer/dmem_wdata\[31:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_timer/dmem_req_ack" \
+           "/scr1_top_tb_ahb/i_top/i_timer/dmem_rdata\[31:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_timer/dmem_resp\[1:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_timer/timer_val\[63:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_timer/timer_irq"
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 13)}
+wvSetPosition -win $_nWave2 {("G1" 13)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 62275785.303867 65237858.618785
+wvZoom -win $_nWave2 63974477.072304 65008747.975634
+wvZoom -win $_nWave2 64484184.058914 64727609.144449
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 0.000000 2600844.861878
+wvZoom -win $_nWave2 0.000000 129323.777662
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcHBSelect "scr1_top_tb_ahb.i_top.i_timer" -win $_nTrace1
+srcSetScope -win $_nTrace1 "scr1_top_tb_ahb.i_top.i_timer" -delim "."
+srcShowCalling -win $_nTrace1
+srcSelect -win $_nTrace1 -range {224 224 3 4 1 1}
+srcHBSelect "scr1_top_tb_ahb.i_top" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "timer_dmem_req" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "timer_dmem_req" -win $_nTrace1
+srcAction -pos 229 5 6 -win $_nTrace1 -name "timer_dmem_req" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem_req" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "fsm" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 "/scr1_top_tb_ahb/i_top/i_dmem_router/fsm"
+wvSetPosition -win $_nWave2 {("G1" 13)}
+wvSetPosition -win $_nWave2 {("G1" 14)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetCursor -win $_nWave2 1155931.049724 -snap {("G2" 1)}
+wvZoom -win $_nWave2 866948.287293 9464185.469613
+wvZoom -win $_nWave2 1075941.898355 2396401.531882
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "port2_req" -win $_nTrace1
+srcSelect -signal "dmem_req" -win $_nTrace1
+srcSelect -signal "port_sel" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 "/scr1_top_tb_ahb/i_top/i_dmem_router/port2_req" \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/dmem_req" \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/port_sel\[1:0\]"
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "port_sel" -win $_nTrace1
+srcAction -pos 231 10 3 -win $_nTrace1 -name "port_sel" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "SCR1_PORT2_ADDR_MASK" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "scr1_top_tb_ahb/i_top/i_dmem_router/SCR1_PORT2_ADDR_MASK"
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "SCR1_PORT2_ADDR_PATTERN" -win $_nTrace1
+srcAction -pos 91 18 4 -win $_nTrace1 -name "SCR1_PORT2_ADDR_PATTERN" -ctrlKey \
+          off
+srcShowDefine -win $_nTrace1
+srcTBShowReference -type RWPDC
+nsMsgSwitchTab -tab intercon
+srcShowCalling -win $_nTrace1
+srcSelect -win $_nTrace1 -range {305 305 3 4 1 1}
+srcHBSelect "scr1_top_tb_ahb.i_top" -win $_nTrace1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "scr1_top_tb_ahb.i_top" -win $_nTrace1
+srcHBSelect "scr1_top_tb_ahb.i_top.i_dmem_router" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem_addr" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/dmem_addr\[31:0\]"
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvSetPosition -win $_nWave2 {("G2" 5)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvZoom -win $_nWave2 0.000000 787898.565862
+wvZoom -win $_nWave2 15670.910702 360430.946151
+wvZoom -win $_nWave2 18337.562910 256431.510043
+wvSetCursor -win $_nWave2 54117.426789 -snap {("G2" 5)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 385159.711164 -snap {("G2" 5)}
+wvZoom -win $_nWave2 295710.051467 613519.430624
+wvZoom -win $_nWave2 350492.662681 512031.131645
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 1285167.929877 4529502.970633
+wvZoom -win $_nWave2 2385732.413315 4307239.133586
+wvZoom -win $_nWave2 3770066.536647 4296623.074357
+wvZoom -win $_nWave2 4016180.807864 4106364.524267
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvVerilogExpression -win $_nWave2 "logical_expression_1" \
+           "\"/scr1_top_tb_ahb/i_top/i_dmem_router/dmem_addr\[31:16\]\"" "==" \
+           "'h50"
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 0.000000 2239616.408840
+wvZoom -win $_nWave2 69291.999390 420701.424865
+wvZoom -win $_nWave2 120158.999099 232765.334334
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 207544.052124 369299.008816
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 192083.495490 349012.613695
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "SCR1_PORT2_ADDR_PATTERN" -win $_nTrace1
+srcSearchString "SCR1_PORT2_ADDR_PATTERN" -win $_nTrace1 -prev -case
+srcSelect -win $_nTrace1 -range {13 13 4 5 1 1}
+srcShowCalling -win $_nTrace1
+srcSelect -win $_nTrace1 -range {305 305 3 4 1 1}
+srcHBSelect "scr1_top_tb_ahb.i_top" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvSaveSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/timer_test.rc"
+wvCloseFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/timer_test_tcm.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/timer_test.rc" \
+           -overWriteAutoAlias on
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 1516406.187845 4928320.110497
+wvZoom -win $_nWave2 1897183.321754 2564485.823754
+wvZoom -win $_nWave2 2009997.998888 2178851.339173
+wvSelectSignal -win $_nWave2 {( "G1" 10 )} 
+wvZoomOut -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G2" 3 )} 
+wvSetPosition -win $_nWave2 {("G2" 3)}
+wvSetPosition -win $_nWave2 {("G2" 2)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvZoom -win $_nWave2 2214487.789995 2343599.957373
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 26031639.558011 31275877.624309
+wvZoom -win $_nWave2 28245229.548425 28923213.917218
+wvZoom -win $_nWave2 28463233.362032 28715698.259582
+wvZoom -win $_nWave2 28520421.543243 28650141.076238
+wvSetCursor -win $_nWave2 28604990.078563 -snap {("G2" 1)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 1390039.005525 3601464.696133
+wvZoom -win $_nWave2 1915405.329812 2753547.884374
+wvZoom -win $_nWave2 1961711.548296 2493306.936493
+wvSetCursor -win $_nWave2 2055695.263336 -snap {("G2" 6)}
+wvZoom -win $_nWave2 2019276.573758 2259522.445330
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 9378349.338006 11366151.643345
+wvZoom -win $_nWave2 9931858.930211 10395313.390350
+wvZoom -win $_nWave2 10065518.172306 10188423.222508
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 15923062.238868 18947748.734024
+wvZoom -win $_nWave2 16992564.645987 17560737.799773
+wvZoom -win $_nWave2 17218578.276215 17340374.510287
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 26047728.594592 31594638.631589
+wvZoom -win $_nWave2 28174554.873969 28946831.851496
+wvZoom -win $_nWave2 28502239.248955 28699361.880788
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 27421678.563536 32413182.265193
+wvZoom -win $_nWave2 28221422.250536 29186630.148646
+wvZoom -win $_nWave2 28476322.457876 28707759.047810
+wvSetCursor -win $_nWave2 28633341.315571 -snap {("G2" 1)}
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 50672481.215470 56490432.762431
+wvZoom -win $_nWave2 55558274.779759 56136855.596584
+wvZoom -win $_nWave2 55846606.214433 56045433.434358
+wvSetCursor -win $_nWave2 55969198.025169 -snap {("G1" 12)}
+debExit

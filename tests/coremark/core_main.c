@@ -1,28 +1,24 @@
 /*
-Author : Shay Gal-On, EEMBC
+Copyright 2018 Embedded Microprocessor Benchmark Consortium (EEMBC)
 
-This file is part of  EEMBC(R) and CoreMark(TM), which are Copyright (C) 2009 
-All rights reserved.                            
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-EEMBC CoreMark Software is a product of EEMBC and is provided under the terms of the
-CoreMark License that is distributed with the official EEMBC COREMARK Software release. 
-If you received this EEMBC CoreMark Software without the accompanying CoreMark License, 
-you must discontinue use and download the official release from www.coremark.org.  
+    http://www.apache.org/licenses/LICENSE-2.0
 
-Also, if you are publicly displaying scores generated from the EEMBC CoreMark software, 
-make sure that you are in compliance with Run and Reporting rules specified in the accompanying readme.txt file.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
-EEMBC 
-4354 Town Center Blvd. Suite 114-200
-El Dorado Hills, CA, 95762 
-*/ 
+Original Author: Shay Gal-on
+*/
+
 /* File: core_main.c
 	This file contains the framework to acquire a block of memory, seed initial parameters, tun t he benchmark and report the results.
 */
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "sc_print.h"
 #include "coremark.h"
 
 /* Function: iterate
@@ -118,9 +114,6 @@ MAIN_RETURN_TYPE main(int argc, char *argv[]) {
 #if CORE_DEBUG
 	results[0].iterations=1;
 #endif
-    // Bob: change the interation times to make it faster
-	results[0].iterations=800;
-
 	results[0].execs=get_seed_32(5);
 	if (results[0].execs==0) { /* if not supplied, execute all algorithms */
 		results[0].execs=ALL_ALGORITHMS_MASK;
@@ -356,21 +349,6 @@ MAIN_RETURN_TYPE main(int argc, char *argv[]) {
 #endif
 	/* And last call any target specific code for finalizing */
 	portable_fini(&(results[0].port));
-
-    float coremark_dmips = (results[0].iterations*1000000)/(float)total_time;
-
-#if HAS_FLOAT
-    ee_printf ("\n");
-    ee_printf ("\n");
-    ee_printf ("Print Personal Added Addtional Info to Easy Visual Analysis\n");
-    ee_printf ("\n");
-    ee_printf (" (*) Assume the core running at 1 MHz\n");
-    ee_printf ("     So the CoreMark/MHz can be caculated by: \n");
-    ee_printf ("     (Iterations*1000000/total_ticks) = %2.6f CoreMark/MHz\n", coremark_dmips);
-    //float coremark_dmips_2 = default_num_contexts*results[0].iterations/time_in_secs(total_time) / 8.388;
-    //ee_printf ("     (Iterations/Sec/total_cycles) = %2.6f CoreMark/MHz\n", coremark_dmips_2);
-    ee_printf ("\n");
-#endif
 
 	return MAIN_RETURN_VAL;	
 }
