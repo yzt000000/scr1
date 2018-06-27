@@ -10,16 +10,16 @@ FSDBMsgShow = 0
 AnnotationShow = 0
 powerDumped = 0
 [hb]
-postSimFile = /home/wjfan/syntacore/scr1_idtcm_2s/fsdb/timer_test_tcm.fsdb
-syncTime = 385000
-viewport = 163 121 1639 928 285 562 178 1637
-activeNode = "scr1_top_tb_ahb"
-activeScope = "scr1_top_tb_ahb"
-activeFile = "/home/wjfan/syntacore/scr1_idtcm_2s/src/tb/scr1_top_tb_ahb_tcm.sv"
+postSimFile = /home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_018.fsdb
+syncTime = 171998874216.108
+viewport = 65 24 1855 1176 260 810 178 1853
+activeNode = "scr1_top_tb_ahb.i_top.i_tcm.scr1_dtcm"
+activeScope = "scr1_top_tb_ahb.i_top.i_tcm.scr1_dtcm"
+activeFile = "/home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_dtcm.sv"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
-sourceBeginLine = 2
+sourceBeginLine = 240
 baMode = False
 srcLineNum = True
 syncSignal = False
@@ -32,14 +32,20 @@ DnDtraceCrossHierOnly = True
 traceIncTopPort = False
 leadingZero = False
 signalPane = False
-Scope1 = "scr1_top_tb_ahb"
-multipleSelection = 1 11 2 0 0
+Scope1 = "scr1_top_tb_ahb.i_top.i_tcm.scr1_dtcm"
+Scope2 = "scr1_top_tb_ahb.i_top.i_tcm.scr1_dtcm.i_sp_memory"
+Scope3 = "scr1_top_tb_ahb.i_top.i_tcm"
+Scope4 = "scr1_top_tb_ahb.i_top"
+Scope5 = "scr1_itcm.i_sp_memory"
+Scope6 = "scr1_itcm"
+Scope7 = "scr1_top_tb_ahb"
+multipleSelection = 1 9 2 0 0
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [hb.sourceTab.1]
-scope = scr1_top_tb_ahb
-File = /home/wjfan/syntacore/scr1_idtcm_2s/src/tb/scr1_top_tb_ahb_tcm.sv
-Line = 3
+scope = scr1_top_tb_ahb.i_top.i_tcm.scr1_dtcm
+File = /home/wjfan/syntacore/scr1_idtcm_2s/src/top/scr1_dtcm.sv
+Line = 241
 [imp.design1]
 dbEnum =  oh
 invokeDir = /home/wjfan/syntacore/scr1_idtcm_2s/src
@@ -55,11 +61,11 @@ ore/scr1_idtcm_2s/src/core/scr1_core_top.sv /home/wjfan/syntacore/scr1_idtcm_2s/
 1_idtcm_2s/src/core/scr1_tapc_data_reg.sv /home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_sync_rstn.sv /home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc_synchronizer.sv /home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc.sv /home/wjfan/syntacore/\
 scr1_idtcm_2s/src/core/scr1_tapc_shift_reg.sv
 [nMemoryManager]
-FsdbFile = /home/wjfan/syntacore/scr1_idtcm_2s/fsdb/timer_test_tcm.fsdb
+FsdbFile = /home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_018.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 28 1348 562 283 134
+viewPort = 0 28 1589 810 283 134
 SessionFile = /home/wjfan/syntacore/scr1_idtcm_2s/src/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE
 hierarchicalName = FALSE

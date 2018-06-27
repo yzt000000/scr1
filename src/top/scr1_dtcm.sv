@@ -48,6 +48,7 @@ logic [`SCR1_DMEM_DWIDTH-1:0]       dmem_writedata;
 logic [`SCR1_DMEM_DWIDTH-1:0]       dmem_rdata_local;
 logic [3:0]                         dmem_byteen;
 logic [1:0]                         dmem_rdata_shift_reg;
+logic [`SCR1_DMEM_DWIDTH-1:0]       dmem_rdata_shift;
 
 
 type_scr1_mem_width_e               mem_width;
@@ -241,13 +242,54 @@ scr1_sp_memory #(
 //-------------------------------------------------------------------------------
 // Data memory output generation
 //-------------------------------------------------------------------------------
+//always_comb begin
+//    dmem_writedata = dmem_wdata;
+//    dmem_byteen    = 4'b1111;
+//    case ( dmem_width )
+//        SCR1_MEM_WIDTH_BYTE : begin
+//            dmem_writedata  = {(`SCR1_DMEM_DWIDTH /  8){dmem_wdata[7:0]}};
+//            dmem_byteen     = 1'b1 << dmem_addr[1:0];
+//        end
+//        SCR1_MEM_WIDTH_HWORD : begin
+//            dmem_writedata  = {(`SCR1_DMEM_DWIDTH / 16){dmem_wdata[15:0]}};
+//            dmem_byteen     = 2'b11 << {dmem_addr[1], 1'b0};
+//        end
+//        default : begin
+//        end
+//    endcase
+//end
+
+
 always_ff @(posedge clk) begin
     if (dmem_rd) begin
         dmem_rdata_shift_reg <= dmem_addr[1:0];
     end
 end
 
-assign dmem_rdata = dmem_rdata_local >> ( 8 * dmem_rdata_shift_reg );
+assign dmem_rdata_shift = dmem_rdata_local >> ( 8 * dmem_rdata_shift_reg );
+
+assign dmem_rdata = dmem_rdata_shift;
+
+//always_comb begin
+//    dmem_rdata = dmem_rdata_local;
+//    case(dmem_width)
+//        SCR1_MEM_WIDTH_BYTE : begin
+//            //dmem_rdata = {24'hxxxx_xx,dmem_rdata_shift[7:0]};
+//            dmem_rdata = {24'h0000_00,dmem_rdata_shift[7:0]};
+//        end
+//        SCR1_MEM_WIDTH_HWORD : begin
+//            //dmem_rdata = {16'hxxxx,   dmem_rdata_shift[15:0]};
+//            dmem_rdata = {16'h0000,   dmem_rdata_shift[15:0]};
+//        end
+//        default : begin
+//        end
+//    endcase
+//end
+
+
+
+
+
 
 endmodule : scr1_dtcm
 

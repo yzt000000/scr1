@@ -8,6 +8,7 @@ CFLAGS := $(FLAGS) $(EXT_CFLAGS) \
 -Wa,-march=rv32$(ARCH) -march=rv32$(ARCH) -mabi=$(ABI) \
 -DFLAGS_STR=\"$(FLAGS_STR)\" \
 -DSELF_TIMED=1 -DTIME=1
+CFLAGS += -DITERATIONS=100 -DPERFORMANCE_RUN=1
 LDFLAGS := -nostartfiles -nostdlib -lc -lgcc -march=rv32$(ARCH) -mabi=$(ABI)
 VPATH += $(src_dir) $(inc_dir)
 incs += -I$(src_dir) -I$(inc_dir)
@@ -29,7 +30,7 @@ else
 baseaddr :=0
 endif
 
-c_src := core_list_join.c core_main.c core_matrix.c core_state.c core_util.c  core_portme.c
+c_src := sc_print.c core_list_join.c core_main.c core_matrix.c core_state.c core_util.c  core_portme.c
 
 c_objs := $(addprefix $(bld_dir)/,$(patsubst %.c, %.o, $(c_src)))
 asm_objs := $(addprefix $(bld_dir)/,$(patsubst %.S, %.o, $(asm_src)))

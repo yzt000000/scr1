@@ -14,7 +14,7 @@ module scr1_top_tb_ahb ();
 //-------------------------------------------------------------------------------
 // Local parameters
 //-------------------------------------------------------------------------------
-localparam                          SCR1_MEM_POWER_SIZE = 24;
+localparam                          SCR1_MEM_POWER_SIZE = 27;
 `ifdef NORMAL_BOOTUP
 localparam logic [`SCR1_XLEN-1:0]   SCR1_EXIT_ADDR      = 32'h000000F8;
 `else
@@ -141,8 +141,8 @@ initial begin
     ft_info     = $fopen(tcm_info,"r");
     fit_info     = $fopen(itcm_info,"r");
     fdt_info     = $fopen(dtcm_info,"r");
-  // imem_req_f   = $fopen("imem_req.txt","w");
-  // dmem_req_f   = $fopen("dmem_req.txt","w");
+  //imem_req_f   = $fopen("imem_req.txt","w");
+   dmem_req_f   = $fopen("dmem_req.txt","w");
   
     forever begin
         if ($feof(f_info)) break;
@@ -171,6 +171,10 @@ initial begin
             end
    //         $fwrite (imem_req_f, "%h ,%h ,%h ,%h ,%h\n",i_top.i_tcm.imem_req, i_top.i_tcm.imem_cmd, i_top.i_tcm.imem_addr, i_top.i_tcm.imem_rdata, i_top.i_tcm.imem_rdata);
    //         $fwrite (dmem_req_f, "%h ,%h ,%h ,%h ,%h\n",i_top.i_tcm.dmem_req, i_top.i_tcm.dmem_cmd, i_top.i_tcm.dmem_addr, i_top.i_tcm.dmem_wdata, i_top.i_tcm.dmem_rdata);
+   //        
+            if (i_top.i_dmem_router.dmem_addr == 'h49fbc0) begin
+                $fwrite (dmem_req_f, "%8h %8h,%t\n",i_top.tcm_dmem_wdata,i_top.tcm_dmem_rdata, $time);
+            end
 
         end
     end

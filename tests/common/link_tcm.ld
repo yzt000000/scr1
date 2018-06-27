@@ -8,12 +8,12 @@ OUTPUT_ARCH( "riscv" )
 ENTRY(_start)
 
 MEMORY {
-  RAM (rwx) : ORIGIN = 0x0, LENGTH = 64K
+  RAM (rwx) : ORIGIN = 0x0, LENGTH = 512K
   ITCM (rwx) : ORIGIN = 0x00480000, LENGTH = 64K
   DTCM (rwx) : ORIGIN = 0x00490000, LENGTH = 64K
 }
 
-STACK_SIZE = 1024;
+STACK_SIZE = 4096;
 
 CL_SIZE = 32;
 

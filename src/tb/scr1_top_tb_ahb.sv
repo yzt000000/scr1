@@ -14,7 +14,7 @@ module scr1_top_tb_ahb ();
 //-------------------------------------------------------------------------------
 // Local parameters
 //-------------------------------------------------------------------------------
-localparam                          SCR1_MEM_POWER_SIZE = 24;
+localparam                          SCR1_MEM_POWER_SIZE = 32;
 `ifdef NORMAL_BOOTUP
 localparam logic [`SCR1_XLEN-1:0]   SCR1_EXIT_ADDR      = 32'h000000F8;
 `else

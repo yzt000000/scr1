@@ -1,0 +1,45 @@
+@FSDB rc file Version 1.0
+[VRTL_FILE_HEADER]
+# !! DON'T EDIT [VRTL_FILE_HEADER] SESSION !!
+Version = 1
+[VRTL_FILE_SOURCE]
+FileType = switch
+File1 = ../fsdb/coremark_sram_000.fsdb
+File2 = ../fsdb/coremark_sram_001.fsdb
+File3 = ../fsdb/coremark_sram_002.fsdb
+File4 = ../fsdb/coremark_sram_003.fsdb
+File5 = ../fsdb/coremark_sram_004.fsdb
+File6 = ../fsdb/coremark_sram_005.fsdb
+File7 = ../fsdb/coremark_sram_006.fsdb
+File8 = ../fsdb/coremark_sram_007.fsdb
+File9 = ../fsdb/coremark_sram_008.fsdb
+File10 = ../fsdb/coremark_sram_009.fsdb
+File11 = ../fsdb/coremark_sram_010.fsdb
+File12 = ../fsdb/coremark_sram_011.fsdb
+File13 = ../fsdb/coremark_sram_012.fsdb
+File14 = ../fsdb/coremark_sram_013.fsdb
+File15 = ../fsdb/coremark_sram_014.fsdb
+File16 = ../fsdb/coremark_sram_015.fsdb
+File17 = ../fsdb/coremark_sram_016.fsdb
+File18 = ../fsdb/coremark_sram_017.fsdb
+File19 = ../fsdb/coremark_sram_018.fsdb
+File20 = ../fsdb/coremark_sram_019.fsdb
+File21 = ../fsdb/coremark_sram_020.fsdb
+File22 = ../fsdb/coremark_sram_021.fsdb
+File23 = ../fsdb/coremark_sram_022.fsdb
+File24 = ../fsdb/coremark_sram_023.fsdb
+File25 = ../fsdb/coremark_sram_024.fsdb
+File26 = ../fsdb/coremark_sram_025.fsdb
+File27 = ../fsdb/coremark_sram_026.fsdb
+File28 = ../fsdb/coremark_sram_027.fsdb
+File29 = ../fsdb/coremark_sram_028.fsdb
+File30 = ../fsdb/coremark_sram_029.fsdb
+File31 = ../fsdb/coremark_sram_030.fsdb
+File32 = ../fsdb/coremark_sram_031.fsdb
+File33 = ../fsdb/coremark_sram_032.fsdb
+File34 = ../fsdb/coremark_sram_033.fsdb
+File35 = ../fsdb/coremark_sram_034.fsdb
+File36 = ../fsdb/coremark_sram_035.fsdb
+File37 = ../fsdb/coremark_sram_036.fsdb
+File38 = ../fsdb/coremark_sram_037.fsdb
+File39 = ../fsdb/coremark_sram_038.fsdb

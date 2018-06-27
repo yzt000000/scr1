@@ -107,7 +107,7 @@ parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_R_DTCM_ADDR_PATTERN       = 'h00480
 
 
 parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_TIMER_ADDR_MASK        = 'hFFFFFFE0;
-parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_TIMER_ADDR_PATTERN     = 'h00490000;
+parameter bit [`SCR1_DMEM_AWIDTH-1:0]   SCR1_TIMER_ADDR_PATTERN     = 'h00500000;
 
 // CSR parameters:
 `ifdef NORMAL_BOOTUP
@@ -178,6 +178,6 @@ parameter int unsigned  SCR1_CSR_MTVEC_BASE_RO_BITS = (`SCR1_XLEN-(SCR1_CSR_MTVE
 //-------------------------------------------------------------------------------
 //`define SCR1_SIM_ENV                    // enable simulation code (SVA, trace log)
 `define SCR1_TRACE_LOG_EN               // enable trace log
-`define SCR1_TRACE_LOG_FULL             // full trace log
+//`define SCR1_TRACE_LOG_FULL             // full trace log
 
 `endif // SCR1_ARCH_DESCRIPTION_SVH

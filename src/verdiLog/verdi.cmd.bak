@@ -36,295 +36,3045 @@ debImport "-sverilog" "-timescale=1ns/1ps" \
           "/home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc_synchronizer.sv" \
           "/home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc.sv" \
           "/home/wjfan/syntacore/scr1_idtcm_2s/src/core/scr1_tapc_shift_reg.sv"
+verdiWindowResize -win $_Verdi_1 "65" "24" "1855" "1176"
 wvCreateWindow
 wvSetPosition -win $_nWave2 {("G1" 0)}
 wvOpenFile -win $_nWave2 \
-           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/timer_test_sram.fsdb}
-srcHBSelect "scr1_top_tb_ahb.i_top" -win $_nTrace1
-srcSetScope -win $_nTrace1 "scr1_top_tb_ahb.i_top" -delim "."
-srcHBSelect "scr1_top_tb_ahb.i_top.i_core_top" -win $_nTrace1
-srcSetScope -win $_nTrace1 "scr1_top_tb_ahb.i_top.i_core_top" -delim "."
-srcHBSelect "scr1_top_tb_ahb.i_top.i_timer" -win $_nTrace1
-srcSetScope -win $_nTrace1 "scr1_top_tb_ahb.i_top.i_timer" -delim "."
-srcSelect -signal "rtc_clk" -win $_nTrace1
-srcSelect -signal "clk" -win $_nTrace1
-srcSelect -signal "rst_n" -win $_nTrace1
-srcSelect -signal "dmem_req" -win $_nTrace1
-srcSelect -signal "dmem_cmd" -win $_nTrace1
-srcSelect -signal "dmem_width" -win $_nTrace1
-srcSelect -signal "dmem_addr" -win $_nTrace1
-srcSelect -signal "dmem_wdata" -win $_nTrace1
-srcSelect -signal "dmem_req_ack" -win $_nTrace1
-srcSelect -signal "dmem_rdata" -win $_nTrace1
-srcSelect -signal "dmem_resp" -win $_nTrace1
-srcSelect -signal "timer_val" -win $_nTrace1
-srcSelect -signal "timer_irq" -win $_nTrace1
-srcAddSelectedToWave -clipboard -win $_nTrace1
-wvAddSignal -win $_nWave2 "/scr1_top_tb_ahb/i_top/i_timer/rtc_clk" \
-           "/scr1_top_tb_ahb/i_top/i_timer/clk" \
-           "/scr1_top_tb_ahb/i_top/i_timer/rst_n" \
-           "/scr1_top_tb_ahb/i_top/i_timer/dmem_req" \
-           "/scr1_top_tb_ahb/i_top/i_timer/dmem_cmd" \
-           "/scr1_top_tb_ahb/i_top/i_timer/dmem_width\[1:0\]" \
-           "/scr1_top_tb_ahb/i_top/i_timer/dmem_addr\[31:0\]" \
-           "/scr1_top_tb_ahb/i_top/i_timer/dmem_wdata\[31:0\]" \
-           "/scr1_top_tb_ahb/i_top/i_timer/dmem_req_ack" \
-           "/scr1_top_tb_ahb/i_top/i_timer/dmem_rdata\[31:0\]" \
-           "/scr1_top_tb_ahb/i_top/i_timer/dmem_resp\[1:0\]" \
-           "/scr1_top_tb_ahb/i_top/i_timer/timer_val\[63:0\]" \
-           "/scr1_top_tb_ahb/i_top/i_timer/timer_irq"
-wvSetPosition -win $_nWave2 {("G1" 0)}
-wvSetPosition -win $_nWave2 {("G1" 13)}
-wvSetPosition -win $_nWave2 {("G1" 13)}
-verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_sram_034.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark.rc" \
+           -overWriteAutoAlias on
+wvSetCursor -win $_nWave2 309269829933.787109 -snap {("G3" 6)}
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
 wvZoomAll -win $_nWave2
-wvZoom -win $_nWave2 62275785.303867 65237858.618785
-wvZoom -win $_nWave2 63974477.072304 65008747.975634
-wvZoom -win $_nWave2 64484184.058914 64727609.144449
+wvZoom -win $_nWave2 316434313114.136108 317210695566.492126
+wvZoom -win $_nWave2 317147013236.158020 317209340623.258179
+wvZoom -win $_nWave2 317198626403.951660 317202922969.031006
+wvZoom -win $_nWave2 317201839454.749084 317202611786.691772
+wvZoom -win $_nWave2 317201974916.061707 317202336146.359497
+wvSelectSignal -win $_nWave2 {( "G3" 5 )} 
+wvSetCursor -win $_nWave2 317202194932.359375 -snap {("G3" 5)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 317201886972.544861 317202387525.522949
+wvZoom -win $_nWave2 317202110605.244141 317202280076.933044
 wvZoomAll -win $_nWave2
-wvZoom -win $_nWave2 0.000000 2600844.861878
-wvZoom -win $_nWave2 0.000000 129323.777662
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-srcHBSelect "scr1_top_tb_ahb.i_top.i_timer" -win $_nTrace1
-srcSetScope -win $_nTrace1 "scr1_top_tb_ahb.i_top.i_timer" -delim "."
-srcShowCalling -win $_nTrace1
-srcSelect -win $_nTrace1 -range {224 224 3 4 1 1}
-srcHBSelect "scr1_top_tb_ahb.i_top" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "timer_dmem_req" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "timer_dmem_req" -win $_nTrace1
-srcAction -pos 229 5 6 -win $_nTrace1 -name "timer_dmem_req" -ctrlKey off
-srcDeselectAll -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "dmem_req" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "fsm" -win $_nTrace1
-srcAddSelectedToWave -clipboard -win $_nTrace1
-wvAddSignal -win $_nWave2 "/scr1_top_tb_ahb/i_top/i_dmem_router/fsm"
-wvSetPosition -win $_nWave2 {("G1" 13)}
-wvSetPosition -win $_nWave2 {("G1" 14)}
-verdiDockWidgetSetCurTab -dock windowDock_nWave_2
-wvSetPosition -win $_nWave2 {("G2" 0)}
-wvMoveSelected -win $_nWave2
-wvSetPosition -win $_nWave2 {("G2" 1)}
-wvSetPosition -win $_nWave2 {("G2" 1)}
-wvSetCursor -win $_nWave2 1155931.049724 -snap {("G2" 1)}
-wvZoom -win $_nWave2 866948.287293 9464185.469613
-wvZoom -win $_nWave2 1075941.898355 2396401.531882
-verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "port2_req" -win $_nTrace1
-srcSelect -signal "dmem_req" -win $_nTrace1
-srcSelect -signal "port_sel" -win $_nTrace1
-srcAddSelectedToWave -clipboard -win $_nTrace1
-wvAddSignal -win $_nWave2 "/scr1_top_tb_ahb/i_top/i_dmem_router/port2_req" \
-           "/scr1_top_tb_ahb/i_top/i_dmem_router/dmem_req" \
-           "/scr1_top_tb_ahb/i_top/i_dmem_router/port_sel\[1:0\]"
-wvSetPosition -win $_nWave2 {("G2" 1)}
-wvSetPosition -win $_nWave2 {("G2" 4)}
-verdiDockWidgetSetCurTab -dock windowDock_nWave_2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "port_sel" -win $_nTrace1
-srcAction -pos 231 10 3 -win $_nTrace1 -name "port_sel" -ctrlKey off
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "SCR1_PORT2_ADDR_MASK" -win $_nTrace1
-srcAddSelectedToWave -clipboard -win $_nTrace1
-wvAddSignal -win $_nWave2 \
-           "scr1_top_tb_ahb/i_top/i_dmem_router/SCR1_PORT2_ADDR_MASK"
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "SCR1_PORT2_ADDR_PATTERN" -win $_nTrace1
-srcAction -pos 91 18 4 -win $_nTrace1 -name "SCR1_PORT2_ADDR_PATTERN" -ctrlKey \
-          off
-srcShowDefine -win $_nTrace1
-srcTBShowReference -type RWPDC
-nsMsgSwitchTab -tab intercon
-srcShowCalling -win $_nTrace1
-srcSelect -win $_nTrace1 -range {305 305 3 4 1 1}
-srcHBSelect "scr1_top_tb_ahb.i_top" -win $_nTrace1
-verdiDockWidgetSetCurTab -dock windowDock_nWave_2
-verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
-srcBackwardHistory -win $_nTrace1
-srcHBSelect "scr1_top_tb_ahb.i_top" -win $_nTrace1
-srcHBSelect "scr1_top_tb_ahb.i_top.i_dmem_router" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "dmem_addr" -win $_nTrace1
-srcAddSelectedToWave -clipboard -win $_nTrace1
-wvAddSignal -win $_nWave2 \
-           "/scr1_top_tb_ahb/i_top/i_dmem_router/dmem_addr\[31:0\]"
-wvSetPosition -win $_nWave2 {("G2" 4)}
-wvSetPosition -win $_nWave2 {("G2" 5)}
-verdiDockWidgetSetCurTab -dock windowDock_nWave_2
-wvZoom -win $_nWave2 0.000000 787898.565862
-wvZoom -win $_nWave2 15670.910702 360430.946151
-wvZoom -win $_nWave2 18337.562910 256431.510043
-wvSetCursor -win $_nWave2 54117.426789 -snap {("G2" 5)}
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvSetCursor -win $_nWave2 385159.711164 -snap {("G2" 5)}
-wvZoom -win $_nWave2 295710.051467 613519.430624
-wvZoom -win $_nWave2 350492.662681 512031.131645
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoom -win $_nWave2 1285167.929877 4529502.970633
-wvZoom -win $_nWave2 2385732.413315 4307239.133586
-wvZoom -win $_nWave2 3770066.536647 4296623.074357
-wvZoom -win $_nWave2 4016180.807864 4106364.524267
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvVerilogExpression -win $_nWave2 "logical_expression_1" \
-           "\"/scr1_top_tb_ahb/i_top/i_dmem_router/dmem_addr\[31:16\]\"" "==" \
-           "'h50"
-wvSetPosition -win $_nWave2 {("G2" 5)}
-wvSetPosition -win $_nWave2 {("G2" 5)}
-wvSetPosition -win $_nWave2 {("G2" 6)}
-wvZoomAll -win $_nWave2
-wvZoom -win $_nWave2 0.000000 2239616.408840
-wvZoom -win $_nWave2 69291.999390 420701.424865
-wvZoom -win $_nWave2 120158.999099 232765.334334
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoom -win $_nWave2 207544.052124 369299.008816
-wvZoomOut -win $_nWave2
-wvZoom -win $_nWave2 192083.495490 349012.613695
-verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "SCR1_PORT2_ADDR_PATTERN" -win $_nTrace1
-srcSearchString "SCR1_PORT2_ADDR_PATTERN" -win $_nTrace1 -prev -case
-srcSelect -win $_nTrace1 -range {13 13 4 5 1 1}
-srcShowCalling -win $_nTrace1
-srcSelect -win $_nTrace1 -range {305 305 3 4 1 1}
-srcHBSelect "scr1_top_tb_ahb.i_top" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-verdiDockWidgetSetCurTab -dock windowDock_nWave_2
-wvSaveSignal -win $_nWave2 \
-           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/timer_test.rc"
+wvSetCursor -win $_nWave2 313884429569.633484 -snap {("G3" 2)}
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvSetCursor -win $_nWave2 310558163572.774841 -snap {("G3" 1)}
 wvCloseFile -win $_nWave2
 wvDisplayGridCount -win $_nWave2 -off
 wvTpfCloseForm -win $_nWave2
 wvGetSignalClose -win $_nWave2
 wvSetPosition -win $_nWave2 {("G1" 0)}
 wvOpenFile -win $_nWave2 \
-           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/timer_test_tcm.fsdb}
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_sram_038.fsdb}
 wvRestoreSignal -win $_nWave2 \
-           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/timer_test.rc" \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark.rc" \
            -overWriteAutoAlias on
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
 wvZoomAll -win $_nWave2
-wvZoom -win $_nWave2 1516406.187845 4928320.110497
-wvZoom -win $_nWave2 1897183.321754 2564485.823754
-wvZoom -win $_nWave2 2009997.998888 2178851.339173
-wvSelectSignal -win $_nWave2 {( "G1" 10 )} 
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvZoom -win $_nWave2 345640563704.275757 345782556938.263550
+wvZoom -win $_nWave2 345699417793.331055 345713047161.340393
+wvZoom -win $_nWave2 345703925236.995911 345707814245.145203
+wvZoom -win $_nWave2 345704885611.512817 345706012270.069153
+wvZoom -win $_nWave2 345705127459.671753 345705575763.599976
+wvSetCursor -win $_nWave2 345705307798.265686 -snap {("G4" 2)}
+wvSelectSignal -win $_nWave2 {( "G3" 5 )} 
 wvZoomOut -win $_nWave2
-wvSelectSignal -win $_nWave2 {( "G2" 3 )} 
-wvSetPosition -win $_nWave2 {("G2" 3)}
-wvSetPosition -win $_nWave2 {("G2" 2)}
-wvSetPosition -win $_nWave2 {("G2" 1)}
-wvSetPosition -win $_nWave2 {("G2" 0)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 345703624115.847595 345703877607.074036
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvZoom -win $_nWave2 345689650909.613647 345691349698.984558
+wvZoom -win $_nWave2 345689770981.100037 345690111924.865540
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 345690018209.938904 345690206234.772949
+wvSelectSignal -win $_nWave2 {( "G3" 9 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 9 )} 
+wvVerilogExpression -win $_nWave2 -modify "logical_expression_2" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" ">=" \
+           "'h7FFF"
+wvSetPosition -win $_nWave2 {("G3" 8)}
+wvSetPosition -win $_nWave2 {("G3" 7)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvSetPosition -win $_nWave2 {("G3" 5)}
 wvMoveSelected -win $_nWave2
-wvSetPosition -win $_nWave2 {("G2" 0)}
-wvSetPosition -win $_nWave2 {("G2" 1)}
-wvZoom -win $_nWave2 2214487.789995 2343599.957373
+wvSetPosition -win $_nWave2 {("G3" 5)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvVerilogExpression -win $_nWave2 -modify "logical_expression_2" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" ">=" \
+           "'h7FFFF"
+wvSetCursor -win $_nWave2 345690095323.051880 -snap {("G3" 8)}
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 344827204402.792297 344861668779.973816
+wvZoom -win $_nWave2 344838872970.192505 344841579596.672729
+wvZoom -win $_nWave2 344839576787.456970 344839782264.336365
+wvSetCursor -win $_nWave2 344839694766.271423 -snap {("G3" 6)}
+wvZoom -win $_nWave2 344839678270.745361 344839731881.205139
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 2 )} 
+wvVerilogExpression -win $_nWave2 -modify "logical_expression_2" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" ">=" \
+           "'h7FFFF" "&&" "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_req\""
+wvZoomAll -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+wvScrollDown -win $_nWave2 0
+wvZoom -win $_nWave2 346041729054.668396 346147879336.387451
+wvZoom -win $_nWave2 346077205108.612549 346092303272.591797
+wvZoom -win $_nWave2 346082237829.926392 346083081008.368530
+wvZoom -win $_nWave2 346082444577.842651 346082641760.933838
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 346033457604.144836 346360179899.825500
+wvZoom -win $_nWave2 346089051712.003723 346108438375.272766
+wvZoom -win $_nWave2 346094583508.587219 346099523216.854736
+wvZoom -win $_nWave2 346095618002.377991 346096402493.568848
+wvZoom -win $_nWave2 346095700832.521729 346095978074.172913
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 346095685591.392395 346095875741.425415
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 346095483328.783203 346098488562.114807
+wvZoom -win $_nWave2 346097395034.719849 346097717585.941284
+wvCloseFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_008.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark.rc" \
+           -overWriteAutoAlias on
+wvSelectSignal -win $_nWave2 {( "G3" 9 )} 
+wvZoom -win $_nWave2 75876262111.561951 75931368885.047989
+wvZoom -win $_nWave2 75878233645.340912 75883090350.508530
+wvZoom -win $_nWave2 75878487923.097458 75879322801.734482
+wvZoom -win $_nWave2 75878536005.105743 75878828868.292557
+wvSelectSignal -win $_nWave2 {( "G3" 2 )} 
+wvVerilogExpression -win $_nWave2 -modify "logical_expression_2" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" ">=" \
+           "'h49FFFF" "&&" "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_req\""
+wvSetCursor -win $_nWave2 75878645637.130676 -snap {("G4" 1)}
+wvZoomAll -win $_nWave2
+wvCloseFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_018.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark.rc" \
+           -overWriteAutoAlias on
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 172609096784.642242 173985027641.666656
+wvZoom -win $_nWave2 173086950607.545654 173317473054.795807
+wvZoom -win $_nWave2 173159567189.923492 173183303358.139465
+wvZoom -win $_nWave2 173164579539.558167 173169612601.404999
+wvZoom -win $_nWave2 173165462301.656372 173166933571.917023
+wvZoom -win $_nWave2 173165747312.069336 173166268547.432190
+wvSelectSignal -win $_nWave2 {( "G3" 9 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 2 )} 
+wvVerilogExpression -win $_nWave2 -modify "logical_expression_2" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" ">=" \
+           "'h49ffff" "&&" "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_req\""
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173150871182.035187 173155179333.306519
+wvZoom -win $_nWave2 173152656846.793976 173153149314.347656
+wvZoom -win $_nWave2 173152787054.089874 173152909096.659882
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173156719359.396637 173159336565.505280
+wvZoom -win $_nWave2 173157781314.658203 173158507555.096741
+wvZoom -win $_nWave2 173157995511.169128 173158169783.525696
+wvZoomOut -win $_nWave2
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173152067969.966949 173153469448.185211
+wvZoom -win $_nWave2 173152657422.344330 173153168607.244171
+wvSelectSignal -win $_nWave2 {( "G3" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 1 )} 
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173152721208.847351 173152987060.680084
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173151310059.811737 173155110859.486694
+wvZoom -win $_nWave2 173152646641.186554 173153037997.523071
+wvZoom -win $_nWave2 173152795875.584351 173152898666.384766
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173156061950.045898 173161389132.609833
+wvZoom -win $_nWave2 173157800489.510406 173158232800.137299
+wvZoom -win $_nWave2 173158009477.359772 173158146790.682800
+wvSelectSignal -win $_nWave2 {( "G3" 5 )} 
+wvSetCursor -win $_nWave2 173158074299.732574 -snap {("G3" 5)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvZoomOut -win $_nWave2
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSetCursor -win $_nWave2 173158075018.612030 -snap {("G1" 4)}
+srcActiveTrace "scr1_top_tb_ahb.i_top.i_core_top.i_pipe_top.new_pc\[31:0\]" -win \
+           $_nTrace1 -TraceByDConWave -TraceTime 173158055000 -TraceValue \
+           00000000010010011111101111000000
+nsMsgSwitchTab -tab trace
+srcHBSelect "scr1_top_tb_ahb.i_top.i_core_top.i_pipe_top.i_pipe_exu" -win \
+           $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ialu_sum2_res" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/ialu_sum2_res\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 9)}
+wvSetPosition -win $_nWave2 {("G3" 10)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ialu_sum2_res" -win $_nTrace1
+srcAction -pos 585 9 6 -win $_nTrace1 -name "ialu_sum2_res" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sum2_res\[31:0\]" -win $_nTrace1
+srcAction -pos 297 6 5 -win $_nTrace1 -name "sum2_res\[31:0\]" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sum2_op1" -win $_nTrace1
+srcSelect -signal "sum2_op2" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/sum2_op1\[32:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/sum2_op2\[32:0\]"
+wvSetPosition -win $_nWave2 {("G3" 10)}
+wvSetPosition -win $_nWave2 {("G3" 12)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sum2_op1" -win $_nTrace1
+srcAction -pos 294 4 4 -win $_nTrace1 -name "sum2_op1" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mdu_cmd" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/mdu_cmd\[1:0\]"
+wvSetPosition -win $_nWave2 {("G3" 12)}
+wvSetPosition -win $_nWave2 {("G3" 13)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ialu_sum2_op1" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/ialu_sum2_op1\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 13)}
+wvSetPosition -win $_nWave2 {("G3" 14)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ialu_sum2_op1" -win $_nTrace1
+srcAction -pos 252 7 5 -win $_nTrace1 -name "ialu_sum2_op1" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mprf2exu_rs1_data" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/mprf2exu_rs1_data\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 14)}
+wvSetPosition -win $_nWave2 {("G3" 15)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mprf2exu_rs1_data" -win $_nTrace1
+srcAction -pos 302 5 11 -win $_nTrace1 -name "mprf2exu_rs1_data" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mprf2exu_rs1_data" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_mprf/mprf2exu_rs1_data\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 15)}
+wvSetPosition -win $_nWave2 {("G3" 16)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "exu2mprf_rs1_addr" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_mprf/exu2mprf_rs1_addr\[4:0\]"
+wvSetPosition -win $_nWave2 {("G3" 16)}
+wvSetPosition -win $_nWave2 {("G3" 17)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "exu2mprf_rs1_addr" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_mprf/exu2mprf_rs1_addr\[4:0\]"
+wvSetPosition -win $_nWave2 {("G3" 17)}
+wvSetPosition -win $_nWave2 {("G3" 18)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173158036915.985199 173158134688.822540
+wvSelectSignal -win $_nWave2 {( "G3" 9 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 18 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 18 )} 
+wvSetRadix -win $_nWave2 -format UDec
+srcHBSelect "scr1_top_tb_ahb.i_top.i_core_top.i_pipe_top.i_pipe_mprf" -win \
+           $_nTrace1
+srcHBSelect "scr1_top_tb_ahb.i_top.i_core_top.i_pipe_top.i_pipe_mprf" -win \
+           $_nTrace1
+srcSetScope -win $_nTrace1 \
+           "scr1_top_tb_ahb.i_top.i_core_top.i_pipe_top.i_pipe_mprf" -delim \
+           "."
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mprf_int\[\$unsigned\(exu2mprf_rs1_addr\)\]" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mprf_int\[\$unsigned\(exu2mprf_rs1_addr\)\]" -win $_nTrace1
+srcAction -pos 36 13 3 -win $_nTrace1 -name \
+          "mprf_int\[\$unsigned\(exu2mprf_rs1_addr\)\]" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mprf_int" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_mprf/mprf_int\[1:31\]"
+wvSetPosition -win $_nWave2 {("G3" 18)}
+wvSetPosition -win $_nWave2 {("G3" 19)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvSelectSignal -win $_nWave2 {( "G3" 19 )} 
+wvExpandBus -win $_nWave2 {("G3" 19)}
+wvScrollDown -win $_nWave2 1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 173158053040.818451 -snap {("G3" 48)}
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173157703583.973206 173159210616.607422
+wvSelectSignal -win $_nWave2 {( "G3" 48 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 48 )} 
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "exu2mprf_w_req" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_mprf/exu2mprf_w_req"
+wvSetPosition -win $_nWave2 {("G3" 50)}
+wvSetPosition -win $_nWave2 {("G3" 51)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "exu2mprf_rd_data" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "exu2mprf_rd_addr" -win $_nTrace1
+srcSelect -signal "exu2mprf_rd_data" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_mprf/exu2mprf_rd_addr\[4:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_mprf/exu2mprf_rd_data\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 51)}
+wvSetPosition -win $_nWave2 {("G3" 53)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvZoom -win $_nWave2 173157958701.117310 173158282200.269165
+wvSetCursor -win $_nWave2 173158044798.169220 -snap {("G3" 53)}
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "exu2mprf_rd_data" -win $_nTrace1
+srcAction -pos 48 5 9 -win $_nTrace1 -name "exu2mprf_rd_data" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "exu_queue.rd_wb_sel" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/exu_queue.rd_wb_sel\[2:0\]"
+wvSetPosition -win $_nWave2 {("G3" 53)}
+wvSetPosition -win $_nWave2 {("G3" 54)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ialu_res" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/ialu_res\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 54)}
+wvSetPosition -win $_nWave2 {("G3" 55)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ialu_res" -win $_nTrace1
+srcAction -pos 673 9 5 -win $_nTrace1 -name "ialu_res" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ialu_cmd" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/ialu_cmd\[4:0\]"
+wvSetPosition -win $_nWave2 {("G3" 55)}
+wvSetPosition -win $_nWave2 {("G3" 56)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvZoom -win $_nWave2 173157986365.076355 173158095609.554321
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sum1_res" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/sum1_res\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 56)}
+wvSetPosition -win $_nWave2 {("G3" 57)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sum1_res" -win $_nTrace1
+srcAction -pos 436 5 5 -win $_nTrace1 -name "sum1_res" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sum1_op1" -win $_nTrace1
+srcSelect -signal "sum1_op2" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/sum1_op1\[31:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/sum1_op2\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 57)}
+wvSetPosition -win $_nWave2 {("G3" 59)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvSetCursor -win $_nWave2 173158035267.632812 -snap {("G3" 58)}
+wvSetCursor -win $_nWave2 173158054714.293793 -snap {("G3" 59)}
+wvSetCursor -win $_nWave2 173158045562.923920 -snap {("G3" 59)}
+wvSelectSignal -win $_nWave2 {( "G3" 59 )} 
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvZoom -win $_nWave2 173156982478.797791 173157601721.493134
+wvZoom -win $_nWave2 173157098654.249298 173157308310.589447
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173157698168.834076 173158374337.972992
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoom -win $_nWave2 173157906447.775574 173158089355.657837
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvZoom -win $_nWave2 173156935567.542145 173160204287.811554
+wvZoom -win $_nWave2 173157891083.460083 173158393085.874939
+wvSetCursor -win $_nWave2 173158075939.437561 -snap {("G3" 9)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoom -win $_nWave2 173157966427.566956 173158252472.572998
+wvSetCursor -win $_nWave2 173158046550.054047 -snap {("G3" 59)}
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvSelectSignal -win $_nWave2 {( "G3" 19 )} 
+wvSetPosition -win $_nWave2 {("G3" 19)}
+wvCollapseBus -win $_nWave2 {("G3" 19)}
+wvSetPosition -win $_nWave2 {("G3" 19)}
+wvSetPosition -win $_nWave2 {("G3" 28)}
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvSetCursor -win $_nWave2 173158074755.189911 -snap {("G3" 9)}
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173158208292.782990 173158303641.118347
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvCreateWindow
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvOpenFile -win $_nWave3 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_sram_038.fsdb}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvSaveSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc"
+verdiDockWidgetSetCurTab -dock windowDock_nWave_3
+wvRestoreSignal -win $_nWave3 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvZoomAll -win $_nWave3
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvZoom -win $_nWave3 346029321878.883057 346160286512.172791
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvZoom -win $_nWave3 346085890372.236633 346089775884.917175
+wvZoom -win $_nWave3 346087256743.587646 346088138273.515198
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvZoom -win $_nWave3 346087535202.342712 346087963659.733337
+wvZoom -win $_nWave3 346087597265.063354 346087908700.496521
+wvSelectSignal -win $_nWave3 {( "G3" 27 28 )} 
+wvSelectSignal -win $_nWave3 {( "G3" 19 )} 
+wvSelectSignal -win $_nWave3 {( "G3" 19 )} 
+wvSetPosition -win $_nWave3 {("G3" 19)}
+wvExpandBus -win $_nWave3 {("G3" 19)}
+wvSetPosition -win $_nWave3 {("G3" 59)}
+wvSelectSignal -win $_nWave3 {( "G3" 48 )} 
+wvSetCursor -win $_nWave3 346087755700.303284 -snap {("G3" 48)}
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvSelectSignal -win $_nWave3 {( "G3" 19 )} 
+wvSetPosition -win $_nWave3 {("G3" 19)}
+wvCollapseBus -win $_nWave3 {("G3" 19)}
+wvSetPosition -win $_nWave3 {("G3" 19)}
+wvSetPosition -win $_nWave3 {("G3" 28)}
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvZoom -win $_nWave3 346087359476.181885 346087968215.597473
+wvZoom -win $_nWave3 346087542735.348145 346087826388.793091
+wvZoom -win $_nWave3 346087661295.509521 346087786786.169739
+wvSetCursor -win $_nWave3 346087744955.940125 -snap {("G3" 28)}
+wvSelectSignal -win $_nWave3 {( "G3" 28 )} 
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvSetCursor -win $_nWave3 346087704330.255188 -snap {("G3" 20)}
+wvSetMarker -win $_nWave3 346087755000.000000
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvZoom -win $_nWave2 173158158455.309601 173158262955.753937
+verdiDockWidgetSetCurTab -dock windowDock_nWave_3
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sum1_op2" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/sum1_op2\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 28)}
+wvSetPosition -win $_nWave2 {("G3" 29)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G4" 0)}
+wvSetPosition -win $_nWave2 {("G3" 28)}
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sum1_op2" -win $_nTrace1
+srcAction -pos 228 8 5 -win $_nTrace1 -name "sum1_op2" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ialu_op2" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/ialu_op2\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 28)}
+wvSetPosition -win $_nWave2 {("G3" 29)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mdu_cmd" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/mdu_cmd\[1:0\]"
+wvSetPosition -win $_nWave2 {("G3" 29)}
+wvSetPosition -win $_nWave2 {("G3" 30)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ialu_op2" -win $_nTrace1
+srcSelect -signal "res32_2_reg" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/ialu_op2\[31:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_ialu/res32_2_reg\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 30)}
+wvSetPosition -win $_nWave2 {("G3" 32)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ialu_op2" -win $_nTrace1
+srcAction -pos 190 5 2 -win $_nTrace1 -name "ialu_op2" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "exu_queue.ialu_op" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/exu_queue.ialu_op\[0:0\]"
+wvSetPosition -win $_nWave2 {("G3" 32)}
+wvSetPosition -win $_nWave2 {("G3" 33)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mprf2exu_rs2_data" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/mprf2exu_rs2_data\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 33)}
+wvSetPosition -win $_nWave2 {("G3" 34)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mprf2exu_rs2_data" -win $_nTrace1
+srcAction -pos 295 5 8 -win $_nTrace1 -name "mprf2exu_rs2_data" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "exu2mprf_rs2_addr" -win $_nTrace1
+srcSelect -signal "exu2mprf_rs2_addr" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_mprf/exu2mprf_rs2_addr\[4:0\]"
+wvSetPosition -win $_nWave2 {("G3" 34)}
+wvSetPosition -win $_nWave2 {("G3" 35)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 173158186084.920807 -snap {("G3" 22)}
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mprf_int\[\$unsigned\(exu2mprf_rs2_addr\)\]" -win $_nTrace1
+srcAction -pos 37 13 2 -win $_nTrace1 -name \
+          "mprf_int\[\$unsigned\(exu2mprf_rs2_addr\)\]" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "exu2mprf_rd_data" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_mprf/exu2mprf_rd_data\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 35)}
+wvSetPosition -win $_nWave2 {("G3" 36)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "exu2mprf_w_req" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_mprf/exu2mprf_w_req"
+wvSetPosition -win $_nWave2 {("G3" 36)}
+wvSetPosition -win $_nWave2 {("G3" 37)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "exu2mprf_rd_data" -win $_nTrace1
+srcAction -pos 48 5 7 -win $_nTrace1 -name "exu2mprf_rd_data" -ctrlKey off
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvSelectSignal -win $_nWave2 {( "G3" 23 )} 
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -signal "SCR1_RD_WB_LSU" -line 672 -pos 0
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "lsu_l_data" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/lsu_l_data\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 37)}
+wvSetPosition -win $_nWave2 {("G3" 38)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "lsu_l_data" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "lsu_l_data" -win $_nTrace1
+srcAction -pos 671 9 4 -win $_nTrace1 -name "lsu_l_data" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "lsu_cmd_r" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_lsu/lsu_cmd_r\[3:0\]"
+wvSetPosition -win $_nWave2 {("G3" 38)}
+wvSetPosition -win $_nWave2 {("G3" 39)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem2lsu_rdata" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/i_pipe_exu/i_lsu/dmem2lsu_rdata\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 39)}
+wvSetPosition -win $_nWave2 {("G3" 40)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem2lsu_rdata" -win $_nTrace1
+srcAction -pos 160 9 3 -win $_nTrace1 -name "dmem2lsu_rdata" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sel_rdata" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/sel_rdata\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 40)}
+wvSetPosition -win $_nWave2 {("G3" 41)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sel_rdata" -win $_nTrace1
+srcAction -pos 169 6 5 -win $_nTrace1 -name "sel_rdata" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "port_sel_r" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/port_sel_r\[1:0\]"
+wvSetPosition -win $_nWave2 {("G3" 41)}
+wvSetPosition -win $_nWave2 {("G3" 42)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "port1_rdata" -win $_nTrace1
+srcSelect -signal "port1_resp" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/port1_rdata\[31:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/port1_resp\[1:0\]"
+wvSetPosition -win $_nWave2 {("G3" 42)}
+wvSetPosition -win $_nWave2 {("G3" 44)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcSelect -signal "port0_resp" -win $_nTrace1
+srcSelect -signal "port0_rdata" -win $_nTrace1
+srcSelect -signal "port2_rdata" -win $_nTrace1
+srcSelect -signal "port2_resp" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/port1_rdata\[31:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/port1_resp\[1:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/port0_resp\[1:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/port0_rdata\[31:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/port2_rdata\[31:0\]" \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/port2_resp\[1:0\]"
+wvSetPosition -win $_nWave2 {("G3" 44)}
+wvSetPosition -win $_nWave2 {("G3" 50)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "port_sel_r" -win $_nTrace1
+srcAction -pos 145 4 6 -win $_nTrace1 -name "port_sel_r" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "port_sel" -win $_nTrace1
+srcAction -pos 105 5 4 -win $_nTrace1 -name "port_sel" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem_addr" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_dmem_router/dmem_addr\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 50)}
+wvSetPosition -win $_nWave2 {("G3" 51)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvSetCursor -win $_nWave2 173158174595.343140 -snap {("G3" 51)}
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvSelectSignal -win $_nWave2 {( "G3" 43 44 )} 
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcShowCalling -win $_nTrace1
+srcSelect -win $_nTrace1 -range {305 305 3 4 1 1}
+srcHBSelect "scr1_top_tb_ahb.i_top" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "tcm_dmem_rdata" -win $_nTrace1
+srcSelect -signal "tcm_dmem_addr" -win $_nTrace1
+srcSelect -signal "tcm_dmem_resp" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 "/scr1_top_tb_ahb/i_top/tcm_dmem_rdata\[31:0\]" \
+           "/scr1_top_tb_ahb/i_top/tcm_dmem_addr\[31:0\]" \
+           "/scr1_top_tb_ahb/i_top/tcm_dmem_resp\[1:0\]"
+wvSetPosition -win $_nWave2 {("G3" 51)}
+wvSetPosition -win $_nWave2 {("G3" 54)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "tcm_dmem_cmd" -win $_nTrace1
+srcSelect -signal "tcm_dmem_req" -win $_nTrace1
+srcSelect -signal "tcm_dmem_req_ack" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 "/scr1_top_tb_ahb/i_top/tcm_dmem_cmd" \
+           "/scr1_top_tb_ahb/i_top/tcm_dmem_req" \
+           "/scr1_top_tb_ahb/i_top/tcm_dmem_req_ack"
+wvSetPosition -win $_nWave2 {("G3" 54)}
+wvSetPosition -win $_nWave2 {("G3" 57)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvZoomOut -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 53 )} 
+wvZoom -win $_nWave2 173158116965.125000 173158246086.092865
+wvSelectSignal -win $_nWave2 {( "G3" 51 )} 
+wvVerilogExpression -win $_nWave2 "logical_expression_5" \
+           "\"/scr1_top_tb_ahb/i_top/i_dmem_router/dmem_addr\[31:0\]\"" "==" \
+           "'h49fbc0"
+wvSetPosition -win $_nWave2 {("G3" 57)}
+wvSetPosition -win $_nWave2 {("G3" 57)}
+wvSetPosition -win $_nWave2 {("G3" 58)}
+wvZoomOut -win $_nWave2
+wvScrollDown -win $_nWave2 1
+wvZoomOut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G3" 57)}
+wvSetPosition -win $_nWave2 {("G3" 56)}
+wvSetPosition -win $_nWave2 {("G3" 55)}
+wvSetPosition -win $_nWave2 {("G3" 52)}
+wvSetPosition -win $_nWave2 {("G3" 53)}
+wvSetPosition -win $_nWave2 {("G3" 54)}
+wvSetPosition -win $_nWave2 {("G3" 53)}
+wvSetPosition -win $_nWave2 {("G3" 52)}
+wvSetPosition -win $_nWave2 {("G3" 58)}
+wvSetPosition -win $_nWave2 {("G3" 57)}
+wvSetPosition -win $_nWave2 {("G3" 56)}
+wvSetPosition -win $_nWave2 {("G3" 55)}
+wvSetPosition -win $_nWave2 {("G3" 54)}
+wvSetPosition -win $_nWave2 {("G3" 53)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G3" 53)}
+wvSetPosition -win $_nWave2 {("G3" 54)}
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 173158055334.049652 -snap {("G3" 56)}
+wvZoom -win $_nWave2 173157966999.984375 173158285182.892975
+wvZoom -win $_nWave2 173158020863.324310 173158237982.900696
+wvSetMarker -win $_nWave2 173158185000.000000
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "tcm_dmem_wdata" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 "/scr1_top_tb_ahb/i_top/tcm_dmem_wdata\[31:0\]"
+wvSetPosition -win $_nWave2 {("G3" 54)}
+wvSetPosition -win $_nWave2 {("G3" 55)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173157968762.144592 173158127907.383820
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173154351054.711273 173161461208.505737
+wvZoom -win $_nWave2 173157676571.657990 173158495542.252106
+wvZoom -win $_nWave2 173157927408.143219 173158129649.572662
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173157961467.900940 173158133002.516510
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173157967604.735565 173158042744.680603
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173157976587.416046 173158039007.335480
+wvSelectSignal -win $_nWave2 {( "G3" 53 )} 
+wvZoomOut -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 52 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 43 )} 
+wvSetCursor -win $_nWave2 173158004965.001953 -snap {("G3" 43)}
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvSelectSignal -win $_nWave2 {( "G3" 36 )} 
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173157983831.514618 173158250069.355957
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173157873479.784851 173158105799.018127
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvSetCursor -win $_nWave2 173158045793.267456 -snap {("G3" 36)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvSetMarker -win $_nWave2 173158045000.000000
+wvScrollDown -win $_nWave2 1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173157835570.731628 173158273449.914764
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvZoom -win $_nWave2 173157932240.362610 173158142009.709503
+wvZoomOut -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G4" 20 )} 
+wvZoom -win $_nWave2 173157892153.461090 173158139996.127502
+wvSetCursor -win $_nWave2 173158005693.888519 -snap {("G4" 20)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoom -win $_nWave2 173156929546.354187 173158943430.219482
+wvSelectSignal -win $_nWave2 {( "G3" 54 )} 
+wvZoom -win $_nWave2 173157685192.078400 173158477741.487885
+wvZoomOut -win $_nWave2
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoom -win $_nWave2 173157807601.468506 173158286174.061310
+wvZoom -win $_nWave2 173157905738.013702 173158134584.244812
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvSetCursor -win $_nWave2 173157994600.628998 -snap {("G3" 59)}
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 173157930699.328186 173158066888.795563
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 173157995941.834076 -snap {("G3" 54)}
+wvZoom -win $_nWave2 173157932244.142517 173158080555.185516
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
 wvZoomOut -win $_nWave2
 wvZoomOut -win $_nWave2
 wvZoomOut -win $_nWave2
 wvZoomOut -win $_nWave2
 wvZoomAll -win $_nWave2
-wvZoom -win $_nWave2 26031639.558011 31275877.624309
-wvZoom -win $_nWave2 28245229.548425 28923213.917218
-wvZoom -win $_nWave2 28463233.362032 28715698.259582
-wvZoom -win $_nWave2 28520421.543243 28650141.076238
-wvSetCursor -win $_nWave2 28604990.078563 -snap {("G2" 1)}
+wvZoom -win $_nWave2 173027101095.636993 173706358101.003479
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 171651170238.612579 172278176705.104706
+wvZoom -win $_nWave2 171994765405.229187 172047836633.195801
+wvZoom -win $_nWave2 172008843636.702515 172012316884.606079
+wvZoom -win $_nWave2 172009877124.950562 172010574199.137115
+wvZoom -win $_nWave2 172010088801.878113 172010273106.833191
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 172009841292.852753 172010608104.393585
+wvZoom -win $_nWave2 172010091543.686798 172010241426.570862
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 172008894180.847900 172013313764.109924
+wvZoom -win $_nWave2 172010020287.529938 172010452218.878387
+wvZoom -win $_nWave2 172010124689.754395 172010233991.753540
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 57 )} 
+wvVerilogExpression -win $_nWave2 -modify "logical_expression_5" \
+           "\"/scr1_top_tb_ahb/i_top/i_dmem_router/dmem_addr\[31:0\]\"" "==" \
+           "'h49fbc0" "&&" "\"/scr1_top_tb_ahb/i_top/tcm_dmem_cmd\""
+wvZoomAll -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 54 )} 
+wvSetCursor -win $_nWave2 179680336378.970337 -snap {("G3" 57)}
+wvSetMarker -win $_nWave2 178025805000.000000
+wvZoom -win $_nWave2 172870349479.013947 173427688560.340302
+wvZoom -win $_nWave2 173138805999.848297 173192302770.307190
+wvZoom -win $_nWave2 173157058388.324799 173161119661.474823
+wvZoom -win $_nWave2 173157866390.287964 173158259759.676819
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
 wvZoomOut -win $_nWave2
 wvZoomOut -win $_nWave2
 wvZoomAll -win $_nWave2
-wvZoom -win $_nWave2 1390039.005525 3601464.696133
-wvZoom -win $_nWave2 1915405.329812 2753547.884374
-wvZoom -win $_nWave2 1961711.548296 2493306.936493
-wvSetCursor -win $_nWave2 2055695.263336 -snap {("G2" 6)}
-wvZoom -win $_nWave2 2019276.573758 2259522.445330
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoom -win $_nWave2 9378349.338006 11366151.643345
-wvZoom -win $_nWave2 9931858.930211 10395313.390350
-wvZoom -win $_nWave2 10065518.172306 10188423.222508
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoom -win $_nWave2 15923062.238868 18947748.734024
-wvZoom -win $_nWave2 16992564.645987 17560737.799773
-wvZoom -win $_nWave2 17218578.276215 17340374.510287
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoom -win $_nWave2 26047728.594592 31594638.631589
-wvZoom -win $_nWave2 28174554.873969 28946831.851496
-wvZoom -win $_nWave2 28502239.248955 28699361.880788
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoom -win $_nWave2 27421678.563536 32413182.265193
-wvZoom -win $_nWave2 28221422.250536 29186630.148646
-wvZoom -win $_nWave2 28476322.457876 28707759.047810
-wvSetCursor -win $_nWave2 28633341.315571 -snap {("G2" 1)}
+wvZoom -win $_nWave2 172556846245.767883 173706358101.003479
+wvZoom -win $_nWave2 173065399919.874908 173266012809.095795
+wvSaveSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc"
+wvCloseFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_017.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvSetCursor -win $_nWave2 161232374022.548004 -snap {("G3" 57)}
+wvZoomAll -win $_nWave2
+wvSetCursor -win $_nWave2 165059224341.710297 -snap {("G3" 58)}
+wvSelectSignal -win $_nWave2 {( "G3" 54 )} 
+wvChangeDisplayAttr -win $_nWave2 -c ID_GREEN5 -lw 1 -ls solid
+paSetPreference -showIsoSymbol off -AnnotateSignal off -highlightPowerObject off
+wvSetPreference -paintSpecificColorPattern on
+simSetInteractiveFsdbFile inter.fsdb
+simSetSimMode on
+wvSelectSignal -win $_nWave2 {( "G3" 54 )} 
+wvChangeDisplayAttr -win $_nWave2 -c ID_RED5 -lw 1 -ls solid
+wvChangeDisplayAttr -win $_nWave2 -c ID_YELLOW6 -lw 1 -ls solid
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_016.fsdb}
 wvDisplayGridCount -win $_nWave2 -off
 wvGetSignalClose -win $_nWave2
+wvDisplayGridCount -win $_nWave3 -off
+wvGetSignalClose -win $_nWave3
+wvReloadFile -win $_nWave2
+wvSetCursor -win $_nWave2 153275644826.352539 -snap {("G3" 56)}
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 160790380030.017456 161063023484.118683
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_015.fsdb}
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvDisplayGridCount -win $_nWave3 -off
+wvGetSignalClose -win $_nWave3
 wvReloadFile -win $_nWave2
 wvZoomAll -win $_nWave2
-wvZoom -win $_nWave2 50672481.215470 56490432.762431
-wvZoom -win $_nWave2 55558274.779759 56136855.596584
-wvZoom -win $_nWave2 55846606.214433 56045433.434358
-wvSetCursor -win $_nWave2 55969198.025169 -snap {("G1" 12)}
+wvSetCursor -win $_nWave2 146361035205.061096 -snap {("G4" 2)}
+wvZoomAll -win $_nWave2
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvZoomAll -win $_nWave2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvCloseFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_016.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvSetCursor -win $_nWave2 151725837191.945892 -snap {("G3" 56)}
+wvZoomAll -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 54 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 55 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 54 )} 
+wvCloseFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_000.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvSetCursor -win $_nWave2 230192554.799302 -snap {("G4" 0)}
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 0.000000 420874447.207679
+wvZoom -win $_nWave2 105034984.207152 127804805.958353
+wvZoom -win $_nWave2 111412918.571965 114631689.186009
+wvZoom -win $_nWave2 112820077.452909 113238573.806742
+wvSelectSignal -win $_nWave2 {( "G3" 55 )} 
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 112919041.250276 113201690.620142
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 113007584.988263 113148663.033257
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 113204183.276024 113318916.904239
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 111851908.305420 115593866.497544
+wvZoom -win $_nWave2 112929435.533498 113366976.892787
+wvZoom -win $_nWave2 113021830.829166 113181804.502414
+wvCloseFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_001.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvSetCursor -win $_nWave2 10097374841.884817 -snap {("G3" 59)}
+wvZoomAll -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 54 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 55 )} 
+wvSetOptions -win $_nWave2 -hierName on
+wvSetCursor -win $_nWave2 11294942523.560209 -snap {("G3" 55)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_000.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvSelectSignal -win $_nWave2 {( "G3" 53 )} 
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvDisplayGridCount -win $_nWave3 -off
+wvGetSignalClose -win $_nWave3
+wvReloadFile -win $_nWave2
+wvZoomAll -win $_nWave2
+wvCloseFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_000.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvSelectSignal -win $_nWave2 {( "G3" 56 )} 
+wvSetOptions -win $_nWave2 -hierName off
+wvSelectSignal -win $_nWave2 {( "G3" 54 )} 
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoom -win $_nWave2 0.000000 79864269.371728
+wvZoom -win $_nWave2 1115033.429274 3902617.002458
+wvZoom -win $_nWave2 2027200.828875 2321526.843147
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 20842185.610970 -snap {("G3" 51)}
+wvSetCursor -win $_nWave2 14530356.530045 -snap {("G3" 54)}
+wvZoom -win $_nWave2 26299287.837186 28797720.181719
+wvZoomAll -win $_nWave2
+wvSetCursor -win $_nWave2 3847225019.197208 -snap {("G3" 58)}
+wvZoom -win $_nWave2 51525335.078534 291976898.778360
+wvZoom -win $_nWave2 108176227.049693 120345677.917573
+wvZoom -win $_nWave2 112168996.269777 114314047.818914
+wvZoom -win $_nWave2 112945781.952852 113170394.680510
+wvCloseFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_001.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvZoomAll -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 55 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 54 )} 
+wvCloseFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_002.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvSetCursor -win $_nWave2 19843484268.062828 -snap {("G3" 58)}
+wvZoomAll -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 54 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 53 )} 
+wvVerilogExpression -win $_nWave2 "logical_expression_8" \
+           "\"/scr1_top_tb_ahb/i_top/tcm_dmem_addr\[31:0\]\"" "==" "'h49fbc0"
+wvSetPosition -win $_nWave2 {("G3" 55)}
+wvSetPosition -win $_nWave2 {("G3" 55)}
+wvSetPosition -win $_nWave2 {("G3" 56)}
+wvSetCursor -win $_nWave2 21080457707.853405 -snap {("G3" 58)}
+wvZoom -win $_nWave2 19399880000.000000 20082348104.712044
+wvZoom -win $_nWave2 19488017242.144314 19541018691.812176
+wvZoom -win $_nWave2 19505175652.111008 19509060575.123314
+wvZoom -win $_nWave2 19507229983.126980 19507921540.102993
+wvZoom -win $_nWave2 19507415243.147606 19507573347.796570
+wvSelectSignal -win $_nWave2 {( "G3" 59 )} 
+wvVerilogExpression -win $_nWave2 -modify "logical_expression_8" \
+           "\"/scr1_top_tb_ahb/i_top/tcm_dmem_addr\[31:0\]\"" "==" "'h49fbc0" \
+           "&&\"/scr1_top_tb_ahb/i_top/tcm_dmem_req\""
+wvSetCursor -win $_nWave2 19507486845.507202 -snap {("G3" 58)}
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 19434003405.235603 20184718320.418850
+wvZoom -win $_nWave2 19577464632.477058 19639696671.693821
+wvZoom -win $_nWave2 19601846993.384769 19607277363.298973
+wvZoom -win $_nWave2 19603889305.276180 19604434237.684673
+wvZoom -win $_nWave2 19604029580.191906 19604224538.557949
+wvSetCursor -win $_nWave2 19604105454.039261 -snap {("G3" 52)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSaveSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc"
+wvCloseFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_001.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 10841698982.722513 11318262882.198954
+wvZoom -win $_nWave2 11080812632.108265 11107011171.084719
+wvZoom -win $_nWave2 11091191459.931860 11091740120.433983
+wvZoom -win $_nWave2 11091368601.627893 11091475365.407974
+wvSelectSignal -win $_nWave2 {( "G3" 52 )} 
+wvChangeDisplayAttr -win $_nWave2 -c ID_GREEN6 -lw 1 -ls solid
+wvChangeDisplayAttr -win $_nWave2 -c ID_ORANGE6 -lw 1 -ls solid
+wvChangeDisplayAttr -win $_nWave2 -c ID_ORANGE5 -lw 1 -ls solid
+wvChangeDisplayAttr -win $_nWave2 -c ID_ORANGE5 -lw 1 -ls solid
+wvChangeDisplayAttr -win $_nWave2 -c ID_YELLOW5 -lw 1 -ls solid
+wvChangeDisplayAttr -win $_nWave2 -c ID_YELLOW3 -lw 1 -ls solid
+wvChangeDisplayAttr -win $_nWave2 -c ID_ORANGE3 -lw 1 -ls solid
+wvChangeDisplayAttr -win $_nWave2 -c ID_ORANGE6 -lw 1 -ls solid
+wvChangeDisplayAttr -win $_nWave2 -c ID_ORANGE8 -lw 1 -ls solid
+wvChangeDisplayAttr -win $_nWave2 -c ID_BLUE5 -lw 1 -ls solid
+wvChangeDisplayAttr -win $_nWave2 -c ID_PURPLE5 -lw 1 -ls solid
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomAll -win $_nWave2
+wvSaveSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc"
+wvCloseFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_000.fsdb}
+wvRestoreSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 541016018.324607 970393810.645724
+wvZoom -win $_nWave2 710743889.111220 729102974.472245
+wvZoom -win $_nWave2 715886355.429602 716815523.798659
+wvZoom -win $_nWave2 716305535.226112 716413370.647652
+wvSetCursor -win $_nWave2 716355030.367226 -snap {("G3" 56)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 0.000000 283389342.931937
+wvZoom -win $_nWave2 110783966.521386 117707964.428972
+wvZoom -win $_nWave2 112747578.493347 113502813.867211
+wvZoom -win $_nWave2 112977576.002444 113171327.485791
+wvSelectSignal -win $_nWave2 {( "G3" 55 )} 
+wvZoom -win $_nWave2 113021702.649131 113076987.758254
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 53 )} 
+wvZoomOut -win $_nWave2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 8
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvSelectSignal -win $_nWave2 {( "G5" 3 )} 
+wvSetPosition -win $_nWave2 {("G5" 3)}
+wvSetPosition -win $_nWave2 {("G5" 4)}
+wvSetPosition -win $_nWave2 {("G3" 56)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 0.000000 455140459.860384
+wvZoom -win $_nWave2 0.000000 54807489.930832
+wvZoom -win $_nWave2 1195625.871091 4447728.240460
+wvZoom -win $_nWave2 1399946.438800 1947639.071687
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvScrollUp -win $_nWave2 15
+wvScrollUp -win $_nWave2 29
+wvScrollUp -win $_nWave2 40
+wvScrollDown -win $_nWave2 1
+wvSelectSignal -win $_nWave2 {( "G3" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 2 3 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 1 2 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 1 2 3 )} 
+wvCopy -win $_nWave2
+wvScrollDown -win $_nWave2 83
+wvSetPosition -win $_nWave2 {("G5" 6)}
+wvPaste -win $_nWave2
+wvSetPosition -win $_nWave2 {("G5" 6)}
+wvSetPosition -win $_nWave2 {("G5" 9)}
+wvScrollDown -win $_nWave2 2
+wvScrollDown -win $_nWave2 0
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 429377792.321117 1159320039.267016
+wvZoom -win $_nWave2 503263744.018940 616003515.144092
+wvZoom -win $_nWave2 522742343.218534 535039438.672848
+wvZoom -win $_nWave2 525897095.455471 527270593.028029
+wvSetCursor -win $_nWave2 526404067.072496 -snap {("G5" 9)}
+wvZoom -win $_nWave2 526295002.256525 526617402.646594
+wvZoom -win $_nWave2 526376305.670749 526468018.172636
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoomAll -win $_nWave2
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvSelectGroup -win $_nWave2 {G4}
+wvCollapseGroup -win $_nWave2 "G4"
+wvSelectGroup -win $_nWave2 {G4}
+wvScrollUp -win $_nWave2 26
+wvScrollUp -win $_nWave2 13
+wvCollapseGroup -win $_nWave2 "G3"
+wvSelectGroup -win $_nWave2 {G4}
+wvExpandGroup -win $_nWave2 "G3"
+wvSelectGroup -win $_nWave2 {G4}
+wvScrollDown -win $_nWave2 10
+wvScrollDown -win $_nWave2 4
+wvScrollDown -win $_nWave2 5
+wvScrollDown -win $_nWave2 18
+wvScrollDown -win $_nWave2 3
+wvSelectSignal -win $_nWave2 {( "G3" 54 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 56 )} 
+wvSetPosition -win $_nWave2 {("G3" 56)}
+wvSetPosition -win $_nWave2 {("G3" 55)}
+wvSetPosition -win $_nWave2 {("G3" 54)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G3" 54)}
+wvSetPosition -win $_nWave2 {("G3" 55)}
+wvSelectSignal -win $_nWave2 {( "G3" 54 55 )} 
+wvSetPosition -win $_nWave2 {("G3" 56)}
+wvSetPosition -win $_nWave2 {("G3" 57)}
+wvSetPosition -win $_nWave2 {("G3" 58)}
+wvSetPosition -win $_nWave2 {("G3" 59)}
+wvSetPosition -win $_nWave2 {("G3" 60)}
+wvSetPosition -win $_nWave2 {("G4" 0)}
+wvSetPosition -win $_nWave2 {("G3" 60)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G3" 60)}
+wvScrollDown -win $_nWave2 2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvZoom -win $_nWave2 34350223.385689 283389342.931937
+wvZoom -win $_nWave2 110191979.687286 118449821.347633
+wvZoom -win $_nWave2 112879741.414346 113297677.554224
+wvZoom -win $_nWave2 113015406.548711 113113508.487303
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvZoomOut -win $_nWave2
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvSetCursor -win $_nWave2 113045967.100247 -snap {("G5" 1)}
+wvSelectSignal -win $_nWave2 {( "G5" 1 )} 
+wvSetPosition -win $_nWave2 {("G5" 0)}
+wvVerilogExpression -win $_nWave2 "logical_expression_10" \
+           "\"/scr1_top_tb_ahb/i_top/i_tcm/scr1_dtcm/i_sp_memory/addra\[15:2\]\"=='h3ef0"
+wvSetPosition -win $_nWave2 {("G5" 0)}
+wvSetPosition -win $_nWave2 {("G5" 0)}
+wvSetPosition -win $_nWave2 {("G5" 1)}
+wvVerilogExpression -win $_nWave2 -modify "logical_expression_2" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" ">=" \
+           "'h49ffff" "&&" "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_req\""
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 16830389.129862 64516491.664472
+wvZoom -win $_nWave2 26276065.635407 29105607.496099
+wvZoom -win $_nWave2 27663676.914378 27922928.131981
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvSelectSignal -win $_nWave2 {( "G5" 6 )} 
+wvSetPosition -win $_nWave2 {("G5" 6)}
+wvSetPosition -win $_nWave2 {("G5" 5)}
+wvSetPosition -win $_nWave2 {("G5" 4)}
+wvSetPosition -win $_nWave2 {("G5" 3)}
+wvSetPosition -win $_nWave2 {("G5" 2)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G5" 2)}
+wvSetPosition -win $_nWave2 {("G5" 3)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 106328289.958772 117100110.183353
+wvZoom -win $_nWave2 112748144.420645 113575299.900369
+wvZoom -win $_nWave2 113011592.719116 113291641.869319
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 112991798.669218 113158459.681817
+wvSetCursor -win $_nWave2 113044734.627827 -snap {("G5" 3)}
+srcActiveTrace "scr1_top_tb_ahb.i_top.i_tcm.scr1_dtcm.i_sp_memory.dataa\[31:0\]" \
+           -win $_nTrace1 -TraceByDConWave -TraceTime 113025000 -TraceValue \
+           00000000000000000000000000001001
+srcHBSelect "scr1_top_tb_ahb.i_top.i_tcm.scr1_dtcm" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem_writedata" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_tcm/scr1_dtcm/dmem_writedata\[31:0\]"
+wvSetPosition -win $_nWave2 {("G5" 3)}
+wvSetPosition -win $_nWave2 {("G5" 4)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem_writedata" -win $_nTrace1
+srcAction -pos 206 6 5 -win $_nTrace1 -name "dmem_writedata" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem_width" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_tcm/scr1_dtcm/dmem_width\[1:0\]"
+wvSetPosition -win $_nWave2 {("G5" 4)}
+wvSetPosition -win $_nWave2 {("G5" 5)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem_byteen" -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvAddSignal -win $_nWave2 \
+           "/scr1_top_tb_ahb/i_top/i_tcm/scr1_dtcm/dmem_byteen\[3:0\]"
+wvSetPosition -win $_nWave2 {("G5" 5)}
+wvSetPosition -win $_nWave2 {("G5" 6)}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "i_sp_memory" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "i_sp_memory" -win $_nTrace1
+srcAction -pos 219 2 7 -win $_nTrace1 -name "i_sp_memory" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ram_block\[addra\]\[i*8 +: 8\]" -win $_nTrace1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+nMemCreateWindow
+nMemGetVariable -win $_nMem0 -var \
+           scr1_top_tb_ahb.i_top.i_tcm.scr1_dtcm.i_sp_memory.ram_block -delim \
+           . -from DUMPED_BY_SIMULATOR -addrRange {[16383:0]} -wordBitRange \
+           {[31:0]} -wordsInOneRow 1
+nMemSetDispOptions -win $_nMem0 -sync TRUE
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 112875510.695752 -snap {("G5" 8)}
+verdiDockWidgetSetCurTab -dock windowDock_nMemory_4
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvSetCursor -win $_nWave2 112894125.538346 -snap {("G5" 9)}
+verdiDockWidgetSetCurTab -dock windowDock_nMemory_4
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvSetCursor -win $_nWave2 113043916.849844 -snap {("G5" 6)}
+verdiDockWidgetSetCurTab -dock windowDock_nMemory_4
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvSetCursor -win $_nWave2 113054678.555719 -snap {("G5" 2)}
+verdiDockWidgetSetCurTab -dock windowDock_nMemory_4
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 112867366.702110 113435119.401226
+wvSetCursor -win $_nWave2 113225060.810967 -snap {("G5" 1)}
+wvZoom -win $_nWave2 113187408.799507 113273116.667698
+wvSetCursor -win $_nWave2 113235124.000116 -snap {("G5" 1)}
+wvZoomOut -win $_nWave2
+verdiDockWidgetSetCurTab -dock windowDock_nMemory_4
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 112962219.976493 113460013.668185
+wvZoom -win $_nWave2 113021729.344430 113284526.188648
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 113046724.855770 -snap {("G3" 59)}
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_3
+verdiDockWidgetSetCurTab -dock windowDock_nMemory_4
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvSaveSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc"
+verdiDockWidgetSetCurTab -dock windowDock_nWave_3
+wvCloseFile -win $_nWave3
+wvDisplayGridCount -win $_nWave3 -off
+wvTpfCloseForm -win $_nWave3
+wvGetSignalClose -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvOpenFile -win $_nWave3 \
+           {/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_sram_000.fsdb}
+wvRestoreSignal -win $_nWave3 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc" \
+           -overWriteAutoAlias on
+wvSetCursor -win $_nWave3 113122857.972944 -snap {("G3" 51)}
+wvZoomAll -win $_nWave3
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvZoom -win $_nWave3 0.000000 787747825.479930
+wvZoom -win $_nWave3 158099476.317962 198655428.938656
+wvZoom -win $_nWave3 166592869.536894 169530168.025129
+wvZoom -win $_nWave3 167069603.846409 167807773.099997
+wvSetCursor -win $_nWave3 167339492.953951 -snap {("G3" 9)}
+wvZoomOut -win $_nWave3
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvZoomOut -win $_nWave3
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvSelectSignal -win $_nWave3 {( "G3" 5 )} 
+wvZoom -win $_nWave3 166915657.553531 167418076.417229
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvZoomOut -win $_nWave3
+wvZoomAll -win $_nWave3
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvZoom -win $_nWave3 0.000000 447772448.167539
+wvZoom -win $_nWave3 781452.789123 45714988.163702
+wvZoom -win $_nWave3 23326638.513715 26384941.968530
+wvZoom -win $_nWave3 24989224.074224 25587007.646544
+wvZoom -win $_nWave3 25369489.540381 25486333.798845
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvZoom -win $_nWave3 0.000000 681558065.370244
+wvZoom -win $_nWave3 28546934.675193 51741319.098788
+wvZoom -win $_nWave3 30186328.338638 31542370.010872
+wvScrollDown -win $_nWave3 0
+wvZoom -win $_nWave3 30330688.795884 30540129.787145
+wvSetPosition -win $_nWave3 {("G3" 3)}
+wvVerilogExpression -win $_nWave3 -modify "logical_expression_1" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" "==" \
+           "'h7fbc0"
+wvScrollDown -win $_nWave3 0
+wvSelectSignal -win $_nWave3 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave3 {( "G3" 5 )} 
+wvSetPosition -win $_nWave3 {("G3" 4)}
+wvSelectSignal -win $_nWave3 {( "G3" 6 )} 
+wvSelectSignal -win $_nWave3 {( "G3" 5 )} 
+wvVerilogExpression -win $_nWave3 -modify "logical_expression_1" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" "==" \
+           "'h7fbc0"
+wvVerilogExpression -win $_nWave3 -modify "logical_expression_1" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" "==" \
+           "'h7fbc0"
+wvSetPosition -win $_nWave3 {("G3" 5)}
+wvVerilogExpression -win $_nWave3 -modify "logical_expression_1" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" "==" \
+           "'h7fbc0"
+wvVerilogExpression -win $_nWave3 -modify "logical_expression_1" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" "==" \
+           "'h7fbc0"
+wvVerilogExpression -win $_nWave3 -modify "logical_expression_1" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" "==" \
+           "'h7fbc0"
+wvVerilogExpression -win $_nWave3 -modify "logical_expression_1" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" "==" \
+           "'h7fbc0"
+wvScrollDown -win $_nWave3 16
+wvScrollDown -win $_nWave3 38
+wvSelectSignal -win $_nWave3 {( "G5" 1 )} 
+wvScrollUp -win $_nWave3 4
+wvScrollUp -win $_nWave3 50
+wvSelectSignal -win $_nWave3 {( "G3" 9 )} 
+wvSelectSignal -win $_nWave3 {( "G3" 6 )} 
+wvSelectSignal -win $_nWave3 {( "G3" 5 )} 
+wvScrollDown -win $_nWave3 48
+wvSelectGroup -win $_nWave3 {G4}
+wvSelectGroup -win $_nWave3 {G4}
+wvSelectGroup -win $_nWave3 {G4}
+wvExpandGroup -win $_nWave3 "G4"
+wvSelectGroup -win $_nWave3 {G4}
+wvCollapseGroup -win $_nWave3 "G4"
+wvScrollDown -win $_nWave3 2
+wvCollapseGroup -win $_nWave3 "G4"
+wvSelectGroup -win $_nWave3 {G4}
+wvScrollUp -win $_nWave3 45
+wvSetPosition -win $_nWave3 {("G3" 0)}
+wvSelectSignal -win $_nWave3 {( "G3" 5 )} 
+wvVerilogExpression -win $_nWave3 "logical_expression_4" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" "==" \
+           "'h7fbc0"
+wvSetPosition -win $_nWave3 {("G3" 0)}
+wvSetPosition -win $_nWave3 {("G3" 0)}
+wvSetPosition -win $_nWave3 {("G3" 1)}
+wvSelectSignal -win $_nWave3 {( "G3" 3 )} 
+wvVerilogExpression -win $_nWave3 -modify "logical_expression_4" \
+           "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr\[31:0\]\"" "==" \
+           "'h7fbc0" "&&" "\"/scr1_top_tb_ahb/i_top/i_core_top/dmem_req\""
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomAll -win $_nWave3
+wvSelectSignal -win $_nWave3 {( "G3" 1 )} 
+wvZoom -win $_nWave3 0.000000 323109267.306016
+wvZoom -win $_nWave3 107045790.389090 115778473.289252
+wvZoom -win $_nWave3 110205392.310157 110974355.669282
+wvZoom -win $_nWave3 110556688.561348 110692111.925379
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvSaveSignal -win $_nWave3 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc"
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 0.000000 472315571.553229
+wvZoom -win $_nWave2 0.000000 45335700.585388
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+verdiDockWidgetSetCurTab -dock windowDock_nWave_3
+wvZoom -win $_nWave3 0.000000 762206476.721883
+wvZoom -win $_nWave3 85723309.064623 140878616.447288
+wvZoom -win $_nWave3 103515343.704189 118422183.537342
+wvZoom -win $_nWave3 109545660.776971 111742047.814288
+wvZoom -win $_nWave3 110556726.474985 110861195.122704
+wvSetCursor -win $_nWave3 110635299.029150 -snap {("G3" 7)}
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoom -win $_nWave3 695855529.098429 739346499.667081
+wvZoom -win $_nWave3 713373252.204518 714852021.038151
+wvZoom -win $_nWave3 713787101.198045 714034637.044652
+wvSetCursor -win $_nWave3 713884863.829659 -snap {("G3" 8)}
+wvZoom -win $_nWave3 713852707.908870 713946585.932649
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvZoom -win $_nWave2 669829356.020942 832992917.102967
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 460161107.693807 1129900541.664002
+wvZoom -win $_nWave2 654771257.355296 786849016.585021
+wvZoom -win $_nWave2 703637723.248222 727840453.997124
+wvZoom -win $_nWave2 714619765.123793 719941831.571195
+wvZoom -win $_nWave2 716050128.531902 716691005.643370
+wvZoom -win $_nWave2 716299544.929557 716406917.011059
+wvSelectSignal -win $_nWave2 {( "G5" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G5" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G5" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G5" 5 )} 
+wvSelectSignal -win $_nWave2 {( "G5" 7 )} 
+wvSetCursor -win $_nWave2 716364661.505978 -snap {("G5" 7)}
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 8
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcHBSelect "scr1_top_tb_ahb.i_top.i_tcm.scr1_dtcm" -win $_nTrace1
+srcSetScope -win $_nTrace1 "scr1_top_tb_ahb.i_top.i_tcm.scr1_dtcm" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem_rdata" -win $_nTrace1
+srcSearchString "dmem_rdata" -win $_nTrace1 -next -case
+srcSearchString "dmem_rdata" -win $_nTrace1 -next -case
+srcSearchString "dmem_rdata" -win $_nTrace1 -next -case
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mem_rdata_local" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_3
+wvSelectSignal -win $_nWave3 {( "G3" 8 )} 
+wvSetCursor -win $_nWave3 713884791.766970 -snap {("G3" 8)}
+wvSetCursor -win $_nWave3 713884791.766970 -snap {("G3" 8)}
+srcHBSelect "scr1_top_tb_ahb.i_memory_tb" -win $_nTrace1
+srcHBSelect "scr1_top_tb_ahb.i_memory_tb" -win $_nTrace1
+srcSetScope -win $_nTrace1 "scr1_top_tb_ahb.i_memory_tb" -delim "."
+srcSelect -signal "dmem_hsize" -win $_nTrace1
+srcSelect -signal "dmem_htrans" -win $_nTrace1
+srcSelect -signal "dmem_haddr" -win $_nTrace1
+srcSelect -signal "dmem_hwrite" -win $_nTrace1
+srcSelect -signal "dmem_hwdata" -win $_nTrace1
+srcSelect -signal "dmem_hready" -win $_nTrace1
+srcSelect -signal "dmem_hrdata" -win $_nTrace1
+srcSelect -signal "dmem_hresp" -win $_nTrace1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_3
+wvScrollUp -win $_nWave3 1
+wvAddSignal -win $_nWave3 "/scr1_top_tb_ahb/i_memory_tb/dmem_hsize\[2:0\]" \
+           "/scr1_top_tb_ahb/i_memory_tb/dmem_htrans\[1:0\]" \
+           "/scr1_top_tb_ahb/i_memory_tb/dmem_haddr\[31:0\]" \
+           "/scr1_top_tb_ahb/i_memory_tb/dmem_hwrite" \
+           "/scr1_top_tb_ahb/i_memory_tb/dmem_hwdata\[31:0\]" \
+           "/scr1_top_tb_ahb/i_memory_tb/dmem_hready" \
+           "/scr1_top_tb_ahb/i_memory_tb/dmem_hrdata\[31:0\]" \
+           "/scr1_top_tb_ahb/i_memory_tb/dmem_hresp"
+wvSetPosition -win $_nWave3 {("G3" 1)}
+wvSetPosition -win $_nWave3 {("G3" 9)}
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G3" 9)}
+wvSetPosition -win $_nWave3 {("G3" 1)}
+wvScrollDown -win $_nWave3 51
+wvSetPosition -win $_nWave3 {("G6" 0)}
+wvPaste -win $_nWave3
+wvSetPosition -win $_nWave3 {("G6" 0)}
+wvSetPosition -win $_nWave3 {("G6" 8)}
+wvSetPosition -win $_nWave3 {("G6" 8)}
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem_hrdata" -win $_nTrace1
+srcAction -pos 40 13 6 -win $_nTrace1 -name "dmem_hrdata" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem_hrdata_l" -win $_nTrace1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_3
+wvAddSignal -win $_nWave3 "/scr1_top_tb_ahb/i_memory_tb/dmem_hrdata_l\[31:0\]"
+wvSetPosition -win $_nWave3 {("G6" 8)}
+wvSetPosition -win $_nWave3 {("G6" 9)}
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem_hrdata_l" -win $_nTrace1
+srcAction -pos 544 5 10 -win $_nTrace1 -name "dmem_hrdata_l" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dmem_haddr\[SCR1_AHB_WIDTH-1:2\]" -win $_nTrace1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_3
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -word -line 505 -pos 5 -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -word -line 505 -pos 5 -win $_nTrace1
+srcAction -pos 505 5 7 -win $_nTrace1 -name "scr1_read_mem" -ctrlKey off
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvSetCursor -win $_nWave2 716318096.126828 -snap {("G2" 0)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 2
+wvScrollDown -win $_nWave2 2
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 2
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 2
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvSelectSignal -win $_nWave2 {( "G5" 5 )} 
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 716275278.464360 -snap {("G5" 11)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 0.000000 970393810.645724
+wvSetCursor -win $_nWave2 109232811.145985 -snap {("G5" 11)}
+wvZoom -win $_nWave2 9314425.756634 53346256.606179
+wvZoom -win $_nWave2 23991702.706482 26911789.220064
+wvZoom -win $_nWave2 24972709.083207 25770254.527144
+wvZoom -win $_nWave2 25134862.738032 25422285.310759
+wvSetCursor -win $_nWave2 25296882.792116 -snap {("G5" 12)}
+wvZoom -win $_nWave2 25256001.571038 25368111.422704
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 25205229.308368 -snap {("G3" 46)}
+wvSelectSignal -win $_nWave2 {( "G3" 45 )} 
+wvSaveSignal -win $_nWave2 \
+           "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark1.rc"
 debExit

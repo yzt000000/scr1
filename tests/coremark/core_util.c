@@ -17,6 +17,7 @@ Original Author: Shay Gal-on
 */
 
 #include "coremark.h"
+#include "sc_print.h"
 /* Function: get_seed
 	Get a values that cannot be determined at compile time.
 
@@ -180,31 +181,31 @@ ee_u16 crc16(ee_s16 newval, ee_u16 crc) {
 ee_u8 check_data_types() {
 	ee_u8 retval=0;
 	if (sizeof(ee_u8) != 1) {
-		ee_printf("ERROR: ee_u8 is not an 8b datatype!\n");
+		sc_printf("ERROR: ee_u8 is not an 8b datatype!\n");
 		retval++;
 	}
 	if (sizeof(ee_u16) != 2) {
-		ee_printf("ERROR: ee_u16 is not a 16b datatype!\n");
+		sc_printf("ERROR: ee_u16 is not a 16b datatype!\n");
 		retval++;
 	}
 	if (sizeof(ee_s16) != 2) {
-		ee_printf("ERROR: ee_s16 is not a 16b datatype!\n");
+		sc_printf("ERROR: ee_s16 is not a 16b datatype!\n");
 		retval++;
 	}
 	if (sizeof(ee_s32) != 4) {
-		ee_printf("ERROR: ee_s32 is not a 32b datatype!\n");
+		sc_printf("ERROR: ee_s32 is not a 32b datatype!\n");
 		retval++;
 	}
 	if (sizeof(ee_u32) != 4) {
-		ee_printf("ERROR: ee_u32 is not a 32b datatype!\n");
+		sc_printf("ERROR: ee_u32 is not a 32b datatype!\n");
 		retval++;
 	}
 	if (sizeof(ee_ptr_int) != sizeof(int *)) {
-		ee_printf("ERROR: ee_ptr_int is not a datatype that holds an int pointer!\n");
+		sc_printf("ERROR: ee_ptr_int is not a datatype that holds an int pointer!\n");
 		retval++;
 	}
 	if (retval>0) {
-		ee_printf("ERROR: Please modify the datatypes in core_portme.h!\n");
+		sc_printf("ERROR: Please modify the datatypes in core_portme.h!\n");
 	}
 	return retval;
 }

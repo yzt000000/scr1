@@ -6,7 +6,7 @@ viewPort 0 28 1589 810 283 134
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_018.fsdb"
+openDirFile -d / "" "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_000.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -16,20 +16,20 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 171996423852.710297 172043225793.807739
-cursor 171998874216.108246
+zoom 9228452676.440979 9228760502.760048
+cursor 9228645000.000000
 marker 178025805000.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 51
+top 15
 ; marker line index
 markerPos 117
 
 ; logical expression list
 ; addExprSig expr_name expression_string
-activeDirFile "" "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_018.fsdb"
+activeDirFile "" "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_000.fsdb"
 
 addExprSig -b 1 -n U logical_expression_1 "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/curr_pc[31:0]" == 'h4594
 
@@ -76,7 +76,7 @@ curSTATUS ByChange
 
 
 addGroup "G1"
-activeDirFile "" "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_018.fsdb"
+activeDirFile "" "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_000.fsdb"
 addSignal -h 15 -UNSIGNED -HEX /scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/curr_pc[31:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope next_pc[31:0]
 addSignal -h 15 -holdScope new_pc_req

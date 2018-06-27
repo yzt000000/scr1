@@ -1,0 +1,25 @@
+@FSDB rc file Version 1.0
+[VRTL_FILE_HEADER]
+# !! DON'T EDIT [VRTL_FILE_HEADER] SESSION !!
+Version = 1
+[VRTL_FILE_SOURCE]
+FileType = switch
+File1 = ../fsdb/coremark_tcm_000.fsdb
+File2 = ../fsdb/coremark_tcm_001.fsdb
+File3 = ../fsdb/coremark_tcm_002.fsdb
+File4 = ../fsdb/coremark_tcm_003.fsdb
+File5 = ../fsdb/coremark_tcm_004.fsdb
+File6 = ../fsdb/coremark_tcm_005.fsdb
+File7 = ../fsdb/coremark_tcm_006.fsdb
+File8 = ../fsdb/coremark_tcm_007.fsdb
+File9 = ../fsdb/coremark_tcm_008.fsdb
+File10 = ../fsdb/coremark_tcm_009.fsdb
+File11 = ../fsdb/coremark_tcm_010.fsdb
+File12 = ../fsdb/coremark_tcm_011.fsdb
+File13 = ../fsdb/coremark_tcm_012.fsdb
+File14 = ../fsdb/coremark_tcm_013.fsdb
+File15 = ../fsdb/coremark_tcm_014.fsdb
+File16 = ../fsdb/coremark_tcm_015.fsdb
+File17 = ../fsdb/coremark_tcm_016.fsdb
+File18 = ../fsdb/coremark_tcm_017.fsdb
+File19 = ../fsdb/coremark_tcm_018.fsdb

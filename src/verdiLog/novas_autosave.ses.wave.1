@@ -2,11 +2,11 @@ Magic 271485
 Revision Verdi3_L-2016.06-SP2
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 28 1589 810 283 134
+viewPort 0 28 1589 815 282 134
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_018.fsdb"
+openDirFile -d / "" "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_sram_000.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -16,25 +16,20 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 171996423852.710297 172043225793.807739
-cursor 171998874216.108246
+zoom 713852707.908870 713946585.932649
+cursor 713885000.000000
 marker 178025805000.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 51
+top 64
 ; marker line index
-markerPos 117
+markerPos 135
 
 ; logical expression list
 ; addExprSig expr_name expression_string
-activeDirFile "" "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_018.fsdb"
-
-addExprSig -b 1 -n U logical_expression_1 "/scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/curr_pc[31:0]" == 'h4594
-
-; logical expression list
-; addExprSig expr_name expression_string
+activeDirFile "" "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_sram_000.fsdb"
 
 addExprSig -b 1 -n UU logical_expression_5 "/scr1_top_tb_ahb/i_top/i_dmem_router/dmem_addr[31:0]" == 'h49fbc0 && \
 "/scr1_top_tb_ahb/i_top/tcm_dmem_cmd"
@@ -57,6 +52,17 @@ f0
 addExprSig -b 1 -n UU logical_expression_2 "/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr[31:0]" >= 'h49ffff && "/s\
 cr1_top_tb_ahb/i_top/i_core_top/dmem_req"
 
+; logical expression list
+; addExprSig expr_name expression_string
+
+addExprSig -b 1 -n U logical_expression_1 "/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr[31:0]" == 'h7fbc0
+
+; logical expression list
+; addExprSig expr_name expression_string
+
+addExprSig -b 1 -n UU logical_expression_4 "/scr1_top_tb_ahb/i_top/i_core_top/dmem_addr[31:0]" == 'h7fbc0 && "/sc\
+r1_top_tb_ahb/i_top/i_core_top/dmem_req"
+
 ; event list
 ; addEvent event_name event_expression
 ; curEvent event_name
@@ -76,7 +82,7 @@ curSTATUS ByChange
 
 
 addGroup "G1"
-activeDirFile "" "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_tcm_018.fsdb"
+activeDirFile "" "/home/wjfan/syntacore/scr1_idtcm_2s/fsdb/coremark_sram_000.fsdb"
 addSignal -h 15 -UNSIGNED -HEX /scr1_top_tb_ahb/i_top/i_core_top/i_pipe_top/curr_pc[31:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope next_pc[31:0]
 addSignal -h 15 -holdScope new_pc_req
@@ -89,6 +95,7 @@ addSignal -h 15 -holdScope imem_cmd
 addSignal -h 15 -holdScope imem_req
 addSignal -h 15 -holdScope imem_req_ack
 addGroup "G3"
+addSignal -h 15 /logical_expression_4
 addSignal -h 15 /scr1_top_tb_ahb/i_top/i_core_top/dmem_req_ack
 addSignal -h 15 -holdScope dmem_req
 addSignal -h 15 -holdScope dmem_cmd
@@ -202,6 +209,16 @@ addSignal -h 15 /scr1_top_tb_ahb/i_top/i_core_top/dmem_req_ack
 addSignal -h 15 -holdScope dmem_req
 addSignal -h 15 -holdScope dmem_cmd
 addGroup "G6"
+addSignal -h 15 -UNSIGNED -HEX /scr1_top_tb_ahb/i_memory_tb/dmem_hsize[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope dmem_htrans[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope dmem_haddr[31:0]
+addSignal -h 15 -holdScope dmem_hwrite
+addSignal -h 15 -UNSIGNED -HEX -holdScope dmem_hwdata[31:0]
+addSignal -h 15 -holdScope dmem_hready
+addSignal -h 15 -UNSIGNED -HEX -holdScope dmem_hrdata[31:0]
+addSignal -h 15 -holdScope dmem_hresp
+addSignal -h 15 -UNSIGNED -HEX -holdScope dmem_hrdata_l[31:0]
+addGroup "G7"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm

@@ -71,6 +71,9 @@ char	*argv[];
     a = read_csr(time);
     printf("mtime: %8x \n",a);
 
+    READ_REG(mtime,a);
+    printf("mtime: %8x \n",a);
+
     //write_csr(time,0x1);
     //a = read_csr(time);
     //printf("time: %8x \n",a);

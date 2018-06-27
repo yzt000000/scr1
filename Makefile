@@ -83,7 +83,7 @@ ifndef TS
 endif
 
 ifndef FSDB
-	FSDB =$(TS)
+	FSDB =0
 endif
 
 ifeq ($(TB),tcm)
@@ -124,6 +124,13 @@ $(dtcm_info):
 	cp test_info dtcm_info; \
 	sed -i 's/hex/dtcm/' dtcm_info ;
 
+ifeq ($(FSDB),0)
+DUMP_COMMAND1:=""
+DUMP_COMMAND2:=""
+else
+DUMP_COMMAND1='fsdbAutoSwitchDumpfile 25 ../fsdb/$(FSDB).fsdb 0'
+DUMP_COMMAND2='fsdbDumpvars 0 "scr1_top_tb_ahb"' 
+endif
 
 
 
@@ -133,9 +140,11 @@ build_define : build_dump
 
 build_dump:
 	echo $(FSDB)
-	echo 'fsdbDumpvars 0 "scr1_top_tb_ahb" +fsdbfile+../fsdb/$(FSDB).fsdb ' > src/dump.ucli
+	echo $(DUMP_COMMAND1) > src/dump.ucli
+	echo $(DUMP_COMMAND2) >> src/dump.ucli
 	echo 'run' >> src/dump.ucli
 
+#echo 'fsdbDumpvars 0 "scr1_top_tb_ahb" +fsdbfile+../fsdb/$(FSDB).fsdb ' > src/dump.ucli
 #ls -tr *.tcm > $@
 
 
